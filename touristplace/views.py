@@ -2,6 +2,13 @@ from django.shortcuts import render
 from .models import State
 from django.contrib.auth.decorators import login_required
 
+def account_settings(request):
+   
+    user = request.user
+    context = {
+        'user': user
+    }
+    return render(request, 'account_settings.html', context)
 
 def home(request):
     states = State.objects.all()
@@ -9,6 +16,7 @@ def home(request):
         'states': states,
     }
     return render(request, 'home.html', context)
+
 @login_required
 def state_detail(request, state_id):
     state = get_object_or_404(State, pk=state_id)
