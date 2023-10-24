@@ -56,3 +56,85 @@ class Package(models.Model):
     def __str__(self):
         return f'Package for {self.state.name} - {self.get_package_type_display()}'
     
+
+class Booking(models.Model):
+    STATUS_CHOICES = [
+        ('pending', 'Pending'),
+        ('confirmed', 'Confirmed'),
+        ('canceled', 'Canceled'),
+    ]
+
+    PAYMENT_METHOD_CHOICES = [
+        ('online', 'Online Payment'),
+        ('cash', 'Cash Payment'),
+    ]
+
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name='User',
+        help_text='Select the user making the booking'
+    )
+    date = models.DateField(
+        verbose_name='Booking Date',
+        help_text='Select the booking date'
+    )
+    no_of_guests = models.IntegerField(
+        validators=[MinValueValidator(1), MaxValueValidator(6)],
+        verbose_name='Number of Guests',
+        help_text='Enter the number of guests (maximum 6)'
+    )
+    package = models.ForeignKey(
+        Package,
+        on_delete=models.CASCADE,
+        verbose_name='Package',
+        help_text='Select the package for the booking'
+    )
+    status = models.CharField(
+    max_length=20,
+    choices=STATUS_CHOICES,
+    default='pending',
+    verbose_name='Booking Status',
+    blank=True,
+    null=True
+
+    )
+    payment_amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name='Payment Amount',
+        blank=True,
+        null=True
+    )
+    payment_method = models.CharField(
+        max_length=50,
+        choices=PAYMENT_METHOD_CHOICES,
+        verbose_name='Payment Method',
+        blank=True
+    )
+    contact_email = models.EmailField(
+        verbose_name='Contact Email',
+        help_text='Enter the contact email address',
+    )
+    contact_phone = models.CharField(
+        max_length=15,
+        verbose_name='Contact Phone',
+        blank=True
+    )
+    special_requests = models.TextField(
+        verbose_name='Special Requests',
+        blank=True
+    )
+
+    class Meta:
+        verbose_name = 'Booking'
+        verbose_name_plural = 'Bookings'
+        ordering = ['date']
+
+    def save(self, *args, **kwargs):
+        # Calculate and set the payment amount based on the package's price and the number of guests
+        self.payment_amount = self.package.price * self.no_of_guests
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f'Booking for {self.user.username} on {self.date}'
