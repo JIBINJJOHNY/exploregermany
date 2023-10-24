@@ -1,0 +1,128 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="EXPLORE DEUTSCHLAND - YOUR ULTIMATE GUIDE TO GERMANY">
+    <meta name="keywords" content="GERMANY, TRAVEL, DESTINATIONS, TOURISAM,DEUTSCHLAND">
+    <title>Explore Deutschland</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- custom css file link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{% url 'home' %}">
+            <img src="{% static 'logo.png' %}" alt="Explore Deutschland Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}#states">Destinations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}#packages">Packages</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">Reviews</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        <img src="{% static 'user-login-image.png' %}" alt="User Image" class="user-image">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="{% url 'account_settings' %}">Account Settings</a>
+                        <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                    </div>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
+                </li>
+                {% endif %}
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="GET" action="{% url 'search' %}">
+                <input class="form-control mr-sm-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+</header>
+
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+
+<footer class="footer">
+    <div class="footer-left col-md-4 col-sm-6">
+        <p class="about">
+            <span>About the Company</span> Welcome to Explore Deutschland, your ultimate guide to exploring the
+            beautiful
+            destinations in Germany. We are passionate about sharing the rich culture, history, and natural beauty of
+            this
+            amazing country. Our mission is to help travelers like you discover the hidden gems, plan memorable trips,
+            and
+            create lasting memories while exploring Germany.
+        </p>
+        <div class="icons">
+            <a href="{{ social_media_urls.facebook }}"><i class="fa fa-facebook"></i></a>
+            <a href="{{ social_media_urls.twitter }}"><i class="fa fa-twitter"></i></a>
+            <a href="{{ social_media_urls.linkedin }}"><i class="fa fa-linkedin"></i></a>
+            <a href="{{ social_media_urls.google_plus }}"><i class="fa fa-google-plus"></i></a>
+            <a href="{{ social_media_urls.instagram }}"><i class="fa fa-instagram"></i></a>
+        </div>
+    </div>
+    <div class="footer-center col-md-4 col-sm-6">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>Sprendlinger Landstraße 222</span> Frankfurt, Germany</p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>(+49) 1523 456 7890</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:support@exploredeutschland.com">support@exploredeutschland.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <h2>Explore Deutschland <span>&copy; 2023</span></h2>
+        <p class="menu">
+            <a href="#">Home</a> |
+            <a href="#about">About</a> |
+            <a href="#states">Destinations</a> |
+            <a href="#packages">Packages</a> | |
+            <a href="#contact">Contact</a>
+        </p>
+    </div>
+</footer>
+</main>
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous">
+</script>
+</body>
+
+</html>
