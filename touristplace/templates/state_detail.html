@@ -2,38 +2,38 @@
 {% load static %}
 
 {% block content %}
-<section class="background-image">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <article>
-                    <h1>{{ state.name }}</h1> <!-- Use <h1> for main heading -->
-                    <p>{{ state.description }}</p>
-                </article>
-            </div>
-            <div class="col-md-6">
-                <article>
-                    <h2>Our Tourist Attractions</h2>
-                    <div class="row">
-                        {% for place in tourist_places %}
-                        <div class="col-md-4 mb-4">
-                            <a href="{% url 'place_details' place.id %}">
-                                <figure class="card">
-                                    <img src="{{ place.images.first.image.url }}" class="card-img-top"
-                                        alt="{{ place.name }}">
-                                    <figcaption class="card-body">
-                                        <h3>{{ place.name }}</h3> <!-- Use <h3> for sub-headings -->
-                                        <p>
-                                            <i class="fas fa-star" style="color: gold;"></i>
-                                            {{ place.average_rating|default: 0|floatformat: 1 }}/5
-                                        </p>
-                                    </figcaption>
-                                </figure>
-                            </a>
+<section class="background-image" style="background-image: url('{{ state.image.url }}')">
+    <div class="background-overlay"></div>
+    <div class="container overlay-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <article>
+                        <h1>{{ state.name }}</h1> <!-- Use <h1> for main heading -->
+                        <p>{{ state.description }}</p>
+                    </article>
+                </div>
+                <div class="col-md-6">
+                    <article>
+                        <h2>Our Tourist Attractions</h2>
+                        <div class="row">
+                            {% for place in tourist_places %}
+                            <div class="col-md-4 mb-4">
+                                <a href="{% url 'place_details' place.id %}">
+                                    <figure class="card">
+                                        <img src="{{ place.images.first.image.url }}" class="card-img-top"
+                                            alt="{{ place.name }}">
+                                        <figcaption class="card-body">
+                                            <h3>{{ place.name }}</h3> <!-- Use <h3> for sub-headings -->
+
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-                    </div>
-                </article>
+                    </article>
+                </div>
             </div>
         </div>
     </div>

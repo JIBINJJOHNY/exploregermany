@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import State,TouristPlace,TouristPlaceImage
+from .models import State,TouristPlace,TouristPlaceImage,Review
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 def account_settings(request):
@@ -24,7 +24,7 @@ def state_detail(request, state_id):
 
     # Calculate average ratings for each tourist place
     for place in tourist_places:
-        place.average_rating = Rev.objects.filter(tourist_place=place).aggregate(avg_rating=Avg('rating'))['avg_rating']
+        place.average_rating = Review.objects.filter(tourist_place=place).aggregate(avg_rating=Avg('rating'))['avg_rating']
 
     context = {
         'state': state,

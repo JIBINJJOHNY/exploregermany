@@ -222,7 +222,6 @@
 
 /*state detail page */
 .background-image {
-    background-image: url("{{ state.image.url }}");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -230,6 +229,29 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    position: relative;
+    /* Add relative positioning */
+}
+
+/* Add an overlay with background color */
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+/* Style for text or content on the overlay */
+.overlay-content {
+    position: relative;
+    z-index: 1;
+    /* Bring content to the front */
+    color: white;
+    /* Text color */
+    text-align: justify;
 }
 
 .background-image a:hover {
