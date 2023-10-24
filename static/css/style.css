@@ -500,3 +500,15 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+
+/*booking_detail page*/
+.booking-container {
+    min-height: 100vh;
+}
+
+.center-form {
+    text-align: center;
+    margin-top: 20px;
+    /* Add some top margin for spacing */
+}
