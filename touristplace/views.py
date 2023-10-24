@@ -53,3 +53,31 @@ def get_large_image(request, image_id):
         return JsonResponse({'image_url': image.image.url})
     except TouristPlaceImage.DoesNotExist:
         return JsonResponse({'error': 'Image not found'}, status=404)
+
+@login_required
+def add_review(request, tourist_place_id):
+    tourist_place = get_object_or_404(TouristPlace, pk=tourist_place_id)
+
+    if request.method == 'POST':
+        form = RevForm(request.POST)
+
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.tourist_place = tourist_place
+            review.user = request.user
+
+            # Save the rating
+            review.rating = form.cleaned_data['rating']
+
+            review.save()
+
+            return redirect('tourist_place_ratings', tourist_place_id=tourist_place_id)
+    else:
+        form = RevForm()
+
+        context = {
+        'tourist_place': tourist_place,  # Make sure 'tourist_place' is included in the context
+        'form': form,
+    }
+    return render(request, 'add_review.html', context)
+
