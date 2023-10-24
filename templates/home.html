@@ -83,6 +83,17 @@
     </div>
 </section>
 
+<section id="packages">
+    <div class="text-center mt-4">
+        <h1>Our Packages</h1>
+        <p class="small">Explore our packages in different states below</p>
+    </div>
+    <div class="text-center mt-4" id="state-list">
+        {% for state in states %}
+        <a href="{% url 'package-detail' state.id %}" class="btn btn-info">{{ state.name }}</a>
+        {% endfor %}
+    </div>
+</section>
 
 </main>
 {% endblock %}
