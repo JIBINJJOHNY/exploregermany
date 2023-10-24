@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from touristplace.models import State
-from django.urls import reverse
+from .models import State
+from .models import Package
+from django.views.generic import ListView, DetailView
+
 # Create your views here.
 class PackageListView(ListView):
     model = State
@@ -8,11 +10,11 @@ class PackageListView(ListView):
     context_object_name = 'states'
 class PackageDetailView(DetailView):
     model = State
-    template_name = 'pack_detail.html'
+    template_name = 'package_detail.html'
     context_object_name = 'state'
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         state_id = self.kwargs['pk'] 
-        context['packages'] = Pack.objects.filter(state_id=state_id)
+        context['packages'] = Package.objects.filter(state_id=state_id)
         return context

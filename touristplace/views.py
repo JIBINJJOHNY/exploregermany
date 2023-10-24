@@ -17,7 +17,7 @@ def home(request):
     context = {
         'states': states,
     }
-    return render(request, 'home.html', context)
+    return render(request,'home.html', context)
 
 @login_required
 def state_detail(request, state_id):
