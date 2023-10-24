@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from .models import State,TouristPlace,TouristPlaceImage,Review,Package
+from .models import State,TouristPlace,TouristPlaceImage,Review
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import JsonResponse
@@ -16,8 +16,6 @@ def home(request):
     states = State.objects.all()
     context = {
         'states': states,
-        'package': Packages,
-        
     }
     return render(request, 'home.html', context)
 
