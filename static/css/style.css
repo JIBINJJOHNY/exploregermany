@@ -173,6 +173,19 @@
     }
 }
 
+
+/* home page*/
+.background-image {
+    background-image: url("{% state 'images/background.svg' %}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
 .card-img-top {
     height: 200px;
     /* Set the desired fixed height for the card images */
@@ -205,4 +218,20 @@
 .small-flag {
     max-width: 100%;
     height: auto;
+}
+
+/*state detail page */
+.background-image {
+    background-image: url("{{ state.image.url }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.background-image a:hover {
+    text-decoration: none;
 }
