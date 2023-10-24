@@ -84,7 +84,7 @@ def add_review(request, tourist_place_id):
 
 @login_required
 def edit_review(request, review_id):
-    review = get_object_or_404(Rev, pk=review_id)
+    review = get_object_or_404(Review, pk=review_id)
 
     if request.method == 'POST':
         form = ReviewForm(request.POST, instance=review)
