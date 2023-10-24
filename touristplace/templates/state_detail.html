@@ -19,7 +19,7 @@
                         <div class="row">
                             {% for place in tourist_places %}
                             <div class="col-md-4 mb-4">
-                                <a href="{% url 'place_details' place.id %}">
+                                <a href="{% url 'place_detail' place.id %}">
                                     <figure class="card">
                                         <img src="{{ place.images.first.image.url }}" class="card-img-top"
                                             alt="{{ place.name }}">

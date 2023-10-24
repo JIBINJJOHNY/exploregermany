@@ -220,6 +220,10 @@
     height: auto;
 }
 
+
+
+
+
 /*state detail page */
 .background-image {
     background-size: cover;
@@ -256,4 +260,70 @@
 
 .background-image a:hover {
     text-decoration: none;
+}
+
+
+
+
+/*place detail page */
+.background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 150vh;
+}
+
+.description-box {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.image-gallery {
+    position: relative;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.image-gallery img {
+    width: 100px;
+    height: auto;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.image-gallery img:hover {
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+}
+
+.modal-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.review-item {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.review-content {
+    text-align: left;
 }
