@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <div class="container">
     <h2>Create a New Booking</h2>
@@ -40,20 +40,6 @@
         <button type="submit" class="btn btn-primary">Create Booking</button>
     </form>
 </div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const noOfGuestsField = document.querySelector("#id_no_of_guests");
-        const maxGuests = 6;
-
-        noOfGuestsField.addEventListener("input", function () {
-            const enteredGuests = parseInt(noOfGuestsField.value);
-            if (enteredGuests > maxGuests) {
-                noOfGuestsField.value = maxGuests;
-                alert("Maximum number of guests is 6");
-            }
-        });
-    });
-</script>
+<link rel="stylesheet" href="{% static 'js/package_detail.js' %}">
 </div>
 {% endblock %}
