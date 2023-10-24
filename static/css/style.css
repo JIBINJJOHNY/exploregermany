@@ -173,6 +173,12 @@
     }
 }
 
+.card-img-top {
+    height: 200px;
+    /* Set the desired fixed height for the card images */
+    object-fit: cover;
+    /* Ensure images maintain their aspect ratio and cover the space */
+}
 
 .card-link {
     text-decoration: none;

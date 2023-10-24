@@ -57,7 +57,7 @@
                 odyssey. Join us at Explore Deutschland and embark on a journey that's as unique as you are.</p>
         </div>
         <div class="flag-image">
-            <img src="{% static 'map-flag.svg' %}" alt="German map cover with the colors of the German flag"
+            <img src="{% static 'images/flag_map.jpeg' %}" alt="German map cover with the colors of the German flag"
                 class="small-flag">
         </div>
     </div>
@@ -83,16 +83,6 @@
     </div>
 </section>
 
-<section id="packages">
-    <div class="text-center mt-4">
-        <h1>Our Packages</h1>
-        <p class="small">Explore our packages in different states below:</p>
-    </div>
-    <div class="text-center mt-4" id="state-list">
-        {% for state in states %}
-        <a href="{% url 'package-detail' state.id %}" class="btn btn-info">{{ state.name }}</a>
-        {% endfor %}
-    </div>
-</section>
+
 </main>
 {% endblock %}
