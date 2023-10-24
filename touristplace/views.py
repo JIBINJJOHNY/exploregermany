@@ -116,3 +116,4 @@ def delete_review(request, review_id):
     tourist_place_id = review.tourist_place.id
     review.delete()
     return redirect('view_review', tourist_place_id=tourist_place_id)
+
