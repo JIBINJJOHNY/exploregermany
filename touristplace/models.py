@@ -80,3 +80,64 @@ class TouristPlace(models.Model):
         self.slug = slugify(self.name, allow_unicode=True)
         super().save(*args, **kwargs)
 
+
+class TouristPlaceImage(models.Model):
+    """TouristPlace image model"""
+    touristplace = models.ForeignKey(
+        'TouristPlace',
+        on_delete=models.CASCADE,
+        related_name='images',
+        verbose_name='TouristPlace',
+        help_text='Choose the TouristPlace for this image'
+    )
+    image = CloudinaryField(
+        'touristplace_image',
+        folder='touristplace_images',
+        null=True,
+        blank=True,
+    )
+    alt_text = models.CharField(
+        max_length=300,
+        null=True,
+        blank=True,
+        verbose_name='Alt text',
+        help_text='Optional. Max length: 300 characters'
+    )
+    default_image = models.BooleanField(
+        default=False,
+        verbose_name='Default Image'
+    )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name='Is Active'
+    )
+    created_at = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name='Created at'
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True,
+        verbose_name='Updated at'
+    )
+    
+    class Meta:
+        verbose_name = 'Touristplace image'
+        verbose_name_plural = 'Touristplace images'
+        ordering = ['touristplace']
+    
+    def __str__(self):
+        return f"Image for {self.touristplace.name}"
+    
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+        if self.default_image:
+            for image in self.touristplace.images.all().exclude(id=self.id):
+                image.default_image = False
+                image.save()
+
+    
+    @property
+    def image_url(self):
+        if self.image:
+            return self.image.url
+        return 'static/images/default_touristplace_image.jpeg'
