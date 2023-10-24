@@ -360,9 +360,19 @@ body {
 
 
 /* add review page */
+.background-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 .rating {
     border: none;
-    float: left;
 }
 
 .rating>input {
@@ -386,7 +396,6 @@ body {
 
 .rating>label {
     color: #ddd;
-    float: right;
     cursor: pointer;
 }
 
@@ -401,4 +410,9 @@ body {
 .rating>label:hover~input:checked~label,
 .rating>input:checked~label:hover~label {
     color: #d0a91b;
+}
+
+.form-group {
+    resize: none;
+    /* Disable resizing */
 }
