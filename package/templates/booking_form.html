@@ -6,19 +6,15 @@
     <form method="post" class="form">
         {% csrf_token %}
         <div class="form-group">
-            <label for="{{ form.user.id_for_label }}">User</label>
-            {{ form.user }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.date.id_for_label }}">Date</label>
+            <label for="{{ form.date.id_for_label }}">Booking Date</label>
             {{ form.date }}
         </div>
         <div class="form-group">
-            <label for="{{ form.no_of_guests.id_for_label }}">Number of Guests</label>
+            <label for="{{ form.no_of_guests.id_for_label }}">Number of Guests (Max 6)</label>
             {{ form.no_of_guests }}
         </div>
         <div class="form-group">
-            <label for="{{ form.package.id_for_label }}">Package</label>
+            <label for="{{ form.package.id_for_label }}">Select a Package</label>
             {{ form.package }}
         </div>
         <div class="form-group">
@@ -40,6 +36,5 @@
         <button type="submit" class="btn btn-primary">Create Booking</button>
     </form>
 </div>
-<link rel="stylesheet" href="{% static 'js/package_detail.js' %}">
-</div>
+<script src="{% static 'js/booking_form.js' %}"></script>
 {% endblock %}

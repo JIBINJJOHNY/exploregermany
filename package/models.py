@@ -2,6 +2,8 @@ from django.db import models
 from touristplace.models import TouristPlace,State  # Adjust the import path as needed
 from django.contrib.auth.models import User 
 from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils import timezone
+from django.core.exceptions import ValidationError
 # Create your models here.
 
 class Package(models.Model):
@@ -82,7 +84,8 @@ class Booking(models.Model):
     no_of_guests = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(6)],
         verbose_name='Number of Guests',
-        help_text='Enter the number of guests (maximum 6)'
+        help_text='Enter the number of guests (maximum 6)',
+        default=1,
     )
     package = models.ForeignKey(
         Package,
@@ -135,6 +138,17 @@ class Booking(models.Model):
         # Calculate and set the payment amount based on the package's price and the number of guests
         self.payment_amount = self.package.price * self.no_of_guests
         super().save(*args, **kwargs)
+    
+    def clean(self):
+        # Ensure booking date is not in the past and within a reasonable future timeframe
+        current_date = timezone.now().date()
+        max_booking_date = current_date + timezone.timedelta(days=365)  # Adjust the number of days as needed
+        if self.date < current_date or self.date > max_booking_date:
+            raise ValidationError("Booking date must be within a reasonable future timeframe.")
+
+        # Ensure the number of guests is within the allowed range
+        if self.no_of_guests < 1 or self.no_of_guests > 6:
+            raise ValidationError("Number of guests must be between 1 and 6.")
 
     def __str__(self):
         return f'Booking for {self.user.username} on {self.date}'

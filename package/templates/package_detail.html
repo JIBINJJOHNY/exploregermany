@@ -22,12 +22,12 @@
                 {{ package.get_description|safe }}
             </div>
             <div class="col-md-2 book-now-button text-center align-self-center">
-                <a href="" class="btn btn-primary">Book Now</a>
+                <a href="{% url 'booking_create' package_id=package.id %}" class="btn btn-primary">Book Now</a>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
+<script src="{% static 'js/package_detail.js' %}"></script>
 
-<link rel="stylesheet" href="{% static 'js/package_detail.js' %}">
 {% endblock %}
