@@ -16,6 +16,37 @@
                             marginwidth="0" src="{{ place.google_map_src }}"></iframe>
                     </div>
                 </div>
+                <div class="col-md-6">
+                    <h2 class="mb-4">Reviews</h2>
+                    <a href="{% url 'add_review' place.id %}" class="btn btn-primary">Add a Review</a>
+                    <ul class="list-group reviews-list">
+                        {% for review in reviews %}
+                        <li class="review-item">
+                            <div class="review-content">
+                                <strong>{{ review.user.first_name }}</strong> <br>
+                                <p class="created-at"><small>Created At: {{ review.created_at }}</small></p>
+                                <div class="rating">
+                                    {% spaceless %}
+                                    {% for star in "12345"|make_list %}
+                                    {% if forloop.counter <= review.rating|add:"0" %}
+                                    <i class="fas fa-star rated"></i>
+                                    {% else %}
+                                    <i class="far fa-star"></i>
+                                    {% endif %}
+                                    {% endfor %}
+                                    {% endspaceless %}
+                                </div>
+                                <div class="comment">
+                                    <p>{{ review.comment }}</p>
+                                </div>
+                            </div>
+                        </li>
+                        {% empty %}
+                        <li>No reviews available.</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
                 <div class="col-md-8">
                     <!-- Your image gallery content here -->
                     <section class="image-gallery">

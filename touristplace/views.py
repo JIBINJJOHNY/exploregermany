@@ -90,10 +90,10 @@ def edit_review(request, review_id):
         form = ReviewForm(request.POST, instance=review)
         if form.is_valid():
             form.save()
-            return redirect('view_review', tourist_place_id=review.view_review.id)
+            return redirect('view_review', tourist_place_id=review.tourist_place_id)
     else:
         # Initialize the form with the existing review data
-        form = RevForm(instance=review)
+        form = ReviewForm(instance=review)
 
     return render(request, 'edit_review.html', {'form': form, 'review': review})
 
@@ -109,11 +109,15 @@ def view_reviews(request, tourist_place_id):
     }
 
     return render(request, 'view_review.html', context)
+from django.urls import reverse
 
 @login_required
-def delete_review(request, review_id):
-    review = get_object_or_404(Rev, pk=review_id)
-    tourist_place_id = review.tourist_place.id
-    review.delete()
-    return redirect('view_review', tourist_place_id=tourist_place_id)
+def delete_review(request, tourist_place_id, review_id):
+    review = get_object_or_404(Review, pk=review_id)
+    
+    if request.method == 'POST':
+        # Handle the confirmation of deletion here if you want
+        review.delete()
+        return redirect('view_review', tourist_place_id=tourist_place_id)
 
+    return render(request, 'delete_review.html', {'review': review, 'tourist_place_id': tourist_place_id})

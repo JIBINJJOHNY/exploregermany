@@ -191,16 +191,6 @@ body {
 
 
 /* home page*/
-.background-image {
-    background-image: url("{% state 'images/background.svg' %}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
 
 .card-img-top {
     height: 200px;
@@ -282,17 +272,7 @@ body {
 
 
 /*place detail page */
-.background-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 150vh;
-    position: relative;
-}
+
 
 /* New style for the overlay */
 .overlay {
@@ -359,18 +339,6 @@ body {
 }
 
 
-/* add review page */
-.background-image {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .rating {
     border: none;
 }
@@ -422,38 +390,76 @@ body {
     padding: 0;
 }
 
+/* edit review page */
+/* Styling star rating */
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating>input {
+    display: none;
+}
+
+.rating>label:before {
+    content: '\f005';
+    font-family: FontAwesome;
+    margin: 5px;
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.rating>.half:before {
+    content: '\f089';
+    position: absolute;
+    cursor: pointer;
+}
+
+.rating>label {
+    color: #ddd;
+    float: right;
+    cursor: pointer;
+}
+
+.rating>input:checked~label,
+.rating:not(:checked)>label:hover,
+.rating:not(:checked)>label:hover~label {
+    color: #d0a91b;
+}
+
+.rating>input:checked+label:hover,
+.rating>input:checked~label:hover,
+.rating>label:hover~input:checked~label,
+.rating>input:checked~label:hover~label {
+    color: #d0a91b;
+}
 
 /* view review page */
+/* Style the review items */
 .review-item {
-    margin-bottom: 20px;
+    background-color: #e4dfdf;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    /* Limit the width of the review items */
+    text-align: left;
+    /* Align text within the review items to the left */
 }
 
 .rating .fas.fa-star {
     font-size: 24px;
-    color: #dcdcd9;
+    color: #FFD700;
+    /* Gold color for rated stars */
 }
 
 .rating .far.fa-star {
     font-size: 24px;
     color: #dcdcd9;
-}
-
-.rating .rated {
-    color: #FFD700;
-}
-
-.rating-value {
-    margin-right: 10px;
-    font-weight: bold;
-}
-
-.rating-stars {
-    display: flex;
-}
-
-.rating-stars .fas,
-.rating-stars .far {
-    margin-right: 5px;
+    /* Default color for unrated stars */
 }
 
 .review-actions {
