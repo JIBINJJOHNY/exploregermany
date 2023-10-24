@@ -8,4 +8,5 @@ urlpatterns = [
     path('get_large_image/<int:image_id>/', views.get_large_image, name='get_large_image'),
     path('add_review/<int:tourist_place_id>/', views.add_review, name='add_review'),
     path('edit_review/<int:review_id>/', views.edit_review, name='edit_review'),
+    path('view_review/<int:tourist_place_id>/reviews/', views.view_reviews, name='view_review'),
 ]

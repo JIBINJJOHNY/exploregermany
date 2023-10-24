@@ -96,3 +96,16 @@ def edit_review(request, review_id):
         form = RevForm(instance=review)
 
     return render(request, 'edit_review.html', {'form': form, 'review': review})
+
+@login_required
+def view_reviews(request, tourist_place_id):
+    tourist_place = get_object_or_404(TouristPlace, id=tourist_place_id)
+    reviews = Review.objects.filter(tourist_place=tourist_place).order_by('-created_at')
+
+    context = {
+        'tourist_place': tourist_place,
+        'reviews': reviews,
+        'current_user': request.user,
+    }
+
+    return render(request, 'view_review.html', context)
