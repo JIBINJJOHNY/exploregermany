@@ -7,4 +7,5 @@ urlpatterns = [
     path('place/<int:place_id>/', views.place_details, name='place_details'),
     path('get_large_image/<int:image_id>/', views.get_large_image, name='get_large_image'),
     path('add_review/<int:tourist_place_id>/', views.add_review, name='add_review'),
+    path('edit_review/<int:review_id>/', views.edit_review, name='edit_review'),
 ]

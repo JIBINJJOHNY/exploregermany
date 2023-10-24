@@ -82,3 +82,17 @@ def add_review(request, tourist_place_id):
     }
     return render(request, 'add_review.html', context)
 
+@login_required
+def edit_review(request, review_id):
+    review = get_object_or_404(Rev, pk=review_id)
+
+    if request.method == 'POST':
+        form = ReviewForm(request.POST, instance=review)
+        if form.is_valid():
+            form.save()
+            return redirect('tourist_place_ratings', tourist_place_id=review.tourist_place.id)
+    else:
+        # Initialize the form with the existing review data
+        form = RevForm(instance=review)
+
+    return render(request, 'edit_review.html', {'form': form, 'review': review})
