@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import State,TouristPlace,TouristPlaceImage
 from django.contrib.auth.decorators import login_required
-
+from django.db.models import Avg
 def account_settings(request):
    
     user = request.user
