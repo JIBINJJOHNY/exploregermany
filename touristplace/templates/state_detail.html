@@ -18,14 +18,13 @@
                         <h2>Our Tourist Attractions</h2>
                         <div class="row">
                             {% for place in tourist_places %}
-                            <div class="col-md-4 mb-4">
-                                <a href="{% url 'place_detail' place.id %}">
+                            <div class="col-md-6 mb-4">
+                                <a href="{% url 'place_details' place.id %}">
                                     <figure class="card">
                                         <img src="{{ place.images.first.image.url }}" class="card-img-top"
-                                            alt="{{ place.name }}">
+                                            alt="{{ place.name }}" style="height: 200px; width: 100%;">
                                         <figcaption class="card-body">
-                                            <h3>{{ place.name }}</h3> <!-- Use <h3> for sub-headings -->
-
+                                            <h4 style="font-size: 1rem;">{{ place.name }}</h4> <!-- Reduce font size -->
                                         </figcaption>
                                     </figure>
                                 </a>

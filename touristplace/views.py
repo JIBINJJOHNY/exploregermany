@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect,get_object_or_404
 from .models import State,TouristPlace,TouristPlaceImage,Review
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
+from django.http import JsonResponse
 def account_settings(request):
    
     user = request.user
@@ -45,3 +46,10 @@ def place_details(request, place_id):
     reviews = Review.objects.filter(tourist_place=place)
 
     return render(request, 'place_detail.html', {'place': place, 'place_image_url': place_image_url, 'reviews': reviews})
+
+def get_large_image(request, image_id):
+    try:
+        image = TouristPlaceImage.objects.get(id=image_id)
+        return JsonResponse({'image_url': image.image.url})
+    except TouristPlaceImage.DoesNotExist:
+        return JsonResponse({'error': 'Image not found'}, status=404)
