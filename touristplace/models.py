@@ -141,3 +141,43 @@ class TouristPlaceImage(models.Model):
         if self.image:
             return self.image.url
         return 'static/images/default_touristplace_image.jpeg'
+
+
+
+class Review(models.Model):
+    """Review model."""
+    STAR_CHOICES = (
+        (1, '1'),
+        (2, '2'),
+        (3, '3'),
+        (4, '4'),
+        (5, '5'),
+    )
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name='revs',
+    )
+    tourist_place = models.ForeignKey(
+        TouristPlace,
+        on_delete=models.CASCADE,
+        related_name='revs',
+    )
+    rating = models.IntegerField(
+        choices=STAR_CHOICES,
+        default=1,  
+    )
+    comment = models.TextField(
+        max_length=1000,
+        blank=True,
+        null=True,
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        """Return string representation of model."""
+        return f'{self.user.username} - {self.tourist_place.name} - {self.rating}'
+
+    class Meta:
+        """Meta class."""
+        ordering = ['-created_at']
