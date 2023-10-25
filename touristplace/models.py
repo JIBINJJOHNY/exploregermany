@@ -23,13 +23,12 @@ class State(models.Model):
         blank=True,
     )
     alt = models.CharField(
-        max_length=300,
+        max_length=250,
         null=True,
         blank=True,
         verbose_name='Alt text',
         help_text='Optional. Max length: 300 characters'
     )
-
 
     def __str__(self):
         return self.name
