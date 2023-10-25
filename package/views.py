@@ -118,3 +118,55 @@ def package_list(request):
     packages = Package.objects.all()
     return render(request, 'package_list.html', {'states': states, 'packages': packages})
 
+
+@csrf_protect
+def book_now(request, booking_id):
+    # Assuming you are passing the booking ID as an argument in the URL
+    booking = Booking.objects.get(id=booking_id)
+    alert_message = ""
+    
+    if request.method == 'POST':
+        # Get the user's email from the booking object
+        user_email = booking.contact_email
+        
+        # Create an SSL context using the system's CA certificates
+        context = ssl.create_default_context()
+
+        # Your SMTP server settings should be configured in settings.py
+        smtp_server = settings.EMAIL_HOST
+        smtp_port = settings.EMAIL_PORT
+        from_email = settings.EMAIL_HOST_USER
+        email_password = settings.EMAIL_HOST_PASSWORD  # You may want to use a safer method to store the password
+
+        # Compose the email message
+        subject = "Booking Confirmation"
+        recipient_list = [user_email]
+
+        # Get the user's full name by calling the get_full_name method
+        user_full_name = booking.user.get_full_name()
+
+        # Compose the email message including booking details
+        message = f"Thank you for choosing the 'Cash' payment option. We value your booking!\n\nBooking Details:\n"
+        message += f"User: {user_full_name}\n"
+        message += f"Booking Date: {booking.date}\n"
+        message += f"Number of Guests: {booking.no_of_guests}\n"
+        message += f"Package: {booking.package}\n"
+        message += f"Email: {booking.contact_email}\n"
+        message += f"Contact Phone: {booking.contact_phone}\n"
+        message += f"Special Requests: {booking.special_requests}\n"
+        message += f"Payment Amount: €{booking.payment_amount}\n"
+        message += "\nTo confirm your reservation, please contact us at your earliest convenience."
+        message += "Our team is here to assist you and ensure your booking is smooth and enjoyable."
+        message += "You can reach us via email at support@exploredeutschland.com or by phone at +49 1523 456 7890."
+        message += "We look forward to helping you with your booking details and any special requests you may have."
+
+        try:
+            print("Before sending the email")
+            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
+            print("After sending the email")
+            alert_message = "Booking successful. Check your email for confirmation."
+        except Exception as e:
+            print(f"Email sending failed: {str(e)}")
+            return HttpResponse("An error occurred while booking.")
+    
+    return render(request, 'booking_detail.html', {'booking': booking, 'alert_message': alert_message})
