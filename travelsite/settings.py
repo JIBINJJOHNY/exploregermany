@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
 
+import dj_database_url
 if os.path.isfile('env.py'):
     import env
 import cloudinary
@@ -87,9 +87,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'travelsite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# DATABASES
 if "DATABASE_URL" in os.environ:
     print("database = PostgreSQL via Heroku")
     DATABASES = {
@@ -103,6 +101,7 @@ else:
             "NAME": BASE_DIR / "db.sqlite3",
         }
     }
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
