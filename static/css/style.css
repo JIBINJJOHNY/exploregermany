@@ -512,3 +512,8 @@ body {
     margin-top: 20px;
     /* Add some top margin for spacing */
 }
+
+.booking-list-content {
+    min-height: 100vh;
+    /* Adjust the height as needed */
+}

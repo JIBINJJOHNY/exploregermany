@@ -52,8 +52,9 @@
                         aria-expanded="false">
                         <img src="{% static 'images/user-login-image.png' %}" alt="User Image" class="user-image">
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="{% url 'account_settings' %}">Account Settings</a>
+                        <a class="dropdown-item" href="{% url 'booking_list' %}">Bookings</a>
                         <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
                     </div>
                 </li>
