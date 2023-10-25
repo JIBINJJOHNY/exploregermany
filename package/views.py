@@ -63,4 +63,30 @@ def booking_detail(request, booking_id):
 def booking_list(request):
     # View to display a list of bookings
     bookings = Booking.objects.all()
-    return render(request, 'booking_list.html', {'bookings': bookings})
+    return render(request,'booking_list.html', {'bookings': bookings})
+
+@login_required
+def select_package(request):
+    states = State.objects.all()
+    packages = Package.objects.all()
+    
+    return render(request, 'select_package.html', {'states': states, 'packages': packages})
+def booking_form(request):
+    if request.method == 'POST':
+        # Process the form data and save the booking
+        state_id = request.POST['state']
+        package_id = request.POST['package']
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            new_booking = form.save(commit=False)
+            new_booking.state_id = state_id
+            new_booking.package_id = package_id
+            new_booking.user = request.user  # Set the user to the currently logged-in user
+            new_booking.save()
+            return redirect('booking_detail', booking_id=new_booking.id)
+    else:
+        # Render the booking form template
+        form = BookingForm()
+
+    return render(request, 'booking_form.html', {'form': form})
+

@@ -2,13 +2,20 @@
 {% load static %}
 {% block content %}
 
-<body>
-    <h1>Booking List</h1>
-    <ul>
-        {% for booking in bookings %}
-        <li><a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a></li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'booking_create' %}">Create a Booking</a>
-</body>
+<h1>Booking List</h1>
+<ul>
+    {% for booking in bookings %}
+    <li>
+        <a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a>
+        <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Edit</a>
+        <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+    </li>
+    {% empty %}
+    <li>No bookings available</li>
+    {% endfor %}
+</ul>
+{% if not bookings %}
+<a href="{% url 'package_list' %}" class="btn btn-primary">Create a Booking</a>
+{% endif %}
+
 {% endblock %}

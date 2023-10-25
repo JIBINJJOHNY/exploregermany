@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<h1>Select a State and Package</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="state">Select a State:</label>
+        <select name="state" id="state">
+            <option value="" disabled selected>Select a State</option>
+            {% for state in states %}
+            <option value="{{ state.id }}">{{ state.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="package">Select a Package:</label>
+        <select name="package" id="package">
+            <option value="" disabled selected>Select a Package</option>
+            {% for package in packages %}
+            <option value="{{ package.id }}">{{ package.name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Next</button>
+</form>
+
+{% endblock %}
