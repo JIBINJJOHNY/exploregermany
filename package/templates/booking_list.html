@@ -1,14 +1,15 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-
 <h1>Booking List</h1>
 <ul>
     {% for booking in bookings %}
     <li>
         <a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a>
         <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Edit</a>
-        <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'confirm_delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+
+
     </li>
     {% empty %}
     <li>No bookings available</li>
@@ -17,5 +18,8 @@
 {% if not bookings %}
 <a href="{% url 'package_list' %}" class="btn btn-primary">Create a Booking</a>
 {% endif %}
+</body>
+
+<script src="{% static 'js/delete_booking.js' %}"></script>
 
 {% endblock %}

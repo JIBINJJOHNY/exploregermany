@@ -90,3 +90,31 @@ def booking_form(request):
 
     return render(request, 'booking_form.html', {'form': form})
 
+def update_booking(request, booking_id):
+    booking = get_object_or_404(Booking, pk=booking_id)
+
+    if request.method == 'POST':
+        form = BookingForm(request.POST, instance=booking)
+        if form.is_valid():
+            form.save()
+            return redirect('booking_detail', booking_id=booking_id)
+    else:
+        form = BookingForm(instance=booking)
+
+    return render(request, 'update_booking.html', {'form': form, 'booking': booking})
+
+def delete_booking(request, booking_id):
+    # Logic to delete the booking with the given ID
+    booking = get_object_or_404(Booking, pk=booking_id)
+    
+    if request.method == 'POST':
+        booking.delete()
+        return redirect('booking_list')
+    
+    return render(request, 'booking_confirm_delete.html', {'booking': booking})
+
+def package_list(request):
+    states = State.objects.all()
+    packages = Package.objects.all()
+    return render(request, 'package_list.html', {'states': states, 'packages': packages})
+
