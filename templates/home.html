@@ -66,20 +66,7 @@
 <section id="states">
     <h1 class="text-center mt-4">Discover the Diverse Beauty of Germany's States</h1>
     <div class="container">
-        <div class="row">
-            {% for state in states %}
-            <div class="col-md-4">
-                <a href="{% url 'state_detail' state.id %}" class="card-link">
-                    <div class="card mb-4">
-                        <img src="{{ state.image.url }}" class="card-img-top" alt="{{ state.alt }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">{{ state.name }}</h5>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            {% endfor %}
-        </div>
+
     </div>
 </section>
 
