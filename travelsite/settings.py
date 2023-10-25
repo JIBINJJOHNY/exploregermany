@@ -152,6 +152,9 @@ STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+ACCOUNT_FORMS = {
+    'signup': 'touristplace.forms.CustomSignupForm'}
+ACCOUNT_AUTHENTICATION_METHOD = 'email'  # Use email as the authentication method
 ACCOUNT_EMAIL_REQUIRED = True  # Require users to provide an email address
 LOGIN_REDIRECT_URL = 'home'
 LOGOUT_REDIRECT_URL = 'home'
