@@ -125,20 +125,3 @@ def delete_review(request, tourist_place_id, review_id):
 
     return render(request, 'delete_review.html', {'review': review, 'tourist_place_id': tourist_place_id})
 
-def search_view(request):
-    query = request.GET.get('query')
-    results = None
-
-    if query:
-        results = TouristPlace.objects.filter(
-            Q(name__icontains=query) |
-            Q(description__icontains=query) |
-            Q(location__icontains=query)
-        ).distinct()
-
-        results = results | Package.objects.filter(
-            Q(state__name__icontains=query) |
-            Q(package_type__icontains=query)
-        ).distinct()
-
-    return render(request, 'search_results.html', {'query': query, 'results': results})

@@ -112,3 +112,6 @@ As a Travel Enthusiast and Regular Explorer, I want a feature-rich experience on
     + [W3C CSS validator](https://jigsaw.w3.org/css-validator/): was used to validate CSS code for the website.
     + [JShint](https://jshint.com/): was used to validate JS code for the website.
     + [PEP8](https://pep8.org/): was used to validate Python code for the website.
+
+## Design
+The Explore Deutschland travel website embodies a modern and user-centric design philosophy. With simplicity at its core, the website's minimalistic aesthetics and strategic use of white space create an uncluttered and visually engaging platform. Responsive design ensures a consistent experience across devices. Our purpose is to inspire and assist travelers in exploring Germany, making their journeys meaningful and memorable.

@@ -62,15 +62,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
                 </li>
-                <form method="get" action="{% url 'search' %}">
-                    {{ search_form.query.label_tag }}
-                    {{ search_form.query }}
-                    <button type="submit">Search</button>
-                </form>
+
                 {% endif %}
             </ul>
-
-        </div>
     </nav>
 </header>
 
@@ -92,15 +86,15 @@
         </p>
         <div class="icons">
             <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Visit our Facebook page"><i
-                    class="fa fa-facebook"></i></a>
+                    class="fab fa-facebook"></i></a>
             <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Visit our Twitter page"><i
-                    class="fa fa-twitter"></i></a>
+                    class="fab fa-twitter"></i></a>
             <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="Visit our LinkedIn profile">
-                <i class="fa fa-linkedin"></i></a>
+                <i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/yourusername" target="_blank" rel="noopener"
-                aria-label="Visit our GitHub profile"><i class="fa fa-github"></i></a>
+                aria-label="Visit our GitHub profile"><i class="fab fa-github"></i></a>
             <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Visit our Instagram page"><i
-                    class="fa fa-instagram"></i></a>
+                    class="fab fa-instagram"></i></a>
         </div>
     </div>
     <div class="footer-center col-md-4 col-sm-6">

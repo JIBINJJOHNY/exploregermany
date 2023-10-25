@@ -91,19 +91,20 @@
     </div>
 </section>
 
-<section class="text-center mt-4">
+<section class="text-center mt-4 our-packages">
     <h1 id="packages">Our Packages</h1>
     <p class="small">Explore our packages in different states below:</p>
+    <!-- Center the state list with some spacing -->
+    <div class="text-center mt-4">
+        <div id="state-list">
+            {% for state in states %}
+            <a href="{% url 'package-detail' state.id %}" class="btn btn-info">{{ state.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
 </section>
 
-<!-- Center the state list with some spacing -->
-<div class="text-center mt-4">
-    <div id="state-list">
-        {% for state in states %}
-        <a href="{% url 'package-detail' state.id %}" class="btn btn-info">{{ state.name }}</a>
-        {% endfor %}
-    </div>
-</div>
+
 
 </main>
 
