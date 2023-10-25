@@ -22,3 +22,5 @@ class CustomSignupForm(SignupForm):
         user.save()
         return user
 
+class SearchForm(forms.Form):
+    query = forms.CharField(label='Search', max_length=100)

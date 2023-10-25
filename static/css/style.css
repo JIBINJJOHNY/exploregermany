@@ -6,6 +6,7 @@
 
 html,
 body {
+
     width: 100%;
     height: 100%;
 }
@@ -16,6 +17,7 @@ body {
 
 .navbar .user-image {
     max-width: 30px;
+    background-color: #ffffff;
 }
 
 .navbar .user-image::after {

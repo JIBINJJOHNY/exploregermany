@@ -62,6 +62,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_login' %}">Sign In</a>
                 </li>
+                <form method="get" action="{% url 'search' %}">
+                    {{ search_form.query.label_tag }}
+                    {{ search_form.query }}
+                    <button type="submit">Search</button>
+                </form>
                 {% endif %}
             </ul>
 

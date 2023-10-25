@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Search Results</h1>
+<p>You searched for: "{{ query }}"</p>
+
+{% if results %}
+<ul>
+    {% for result in results %}
+    <li>
+        {% if result|instanceof:"TouristPlace" %}
+        <a href="{% url 'touristplace_detail' result.id %}">{{ result.name }}</a>
+        {% elif result|instanceof:"Package" %}
+        <a href="{% url 'package_detail' result.id %}">{{ result.state }} - {{ result.package_type }}</a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No results found.</p>
+{% endif %}
+{% endblock %}

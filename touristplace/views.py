@@ -1,9 +1,12 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import State,TouristPlace,TouristPlaceImage,Review
+from package.models import Package
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import JsonResponse
-from .forms import ReviewForm
+from .forms import ReviewForm,SearchForm
+from django.db.models import Q
+
 def account_settings(request):
    
     user = request.user
@@ -121,3 +124,21 @@ def delete_review(request, tourist_place_id, review_id):
         return redirect('view_review', tourist_place_id=tourist_place_id)
 
     return render(request, 'delete_review.html', {'review': review, 'tourist_place_id': tourist_place_id})
+
+def search_view(request):
+    query = request.GET.get('query')
+    results = None
+
+    if query:
+        results = TouristPlace.objects.filter(
+            Q(name__icontains=query) |
+            Q(description__icontains=query) |
+            Q(location__icontains=query)
+        ).distinct()
+
+        results = results | Package.objects.filter(
+            Q(state__name__icontains=query) |
+            Q(package_type__icontains=query)
+        ).distinct()
+
+    return render(request, 'search_results.html', {'query': query, 'results': results})
