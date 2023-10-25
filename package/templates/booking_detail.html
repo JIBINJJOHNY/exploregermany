@@ -22,7 +22,7 @@
             <p><strong>Payment Amount:</strong> €{{ booking.payment_amount }}</p>
         </div>
         <div class="col-md-4">
-            <form method="post" action="#" class="center-form">
+            <form method="post" action="{% url 'book_now' booking.id %}" class="center-form">
                 {% csrf_token %}
                 <input type="hidden" name="user_email" value="{{ booking.contact_email }}">
                 <button class="btn btn-primary" type="submit">Book Now</button>

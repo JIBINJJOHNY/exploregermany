@@ -7,6 +7,12 @@ from django.utils import timezone
 from django.core.exceptions import ValidationError
 from django.urls import reverse
 from .forms import BookingForm
+from django.views.decorators.csrf import csrf_protect
+from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.conf import settings
+import smtplib
+import ssl
 # Create your views here.
 class PackageListView(ListView):
     model = State
