@@ -77,3 +77,15 @@ As a Travel Enthusiast and Regular Explorer, I want a feature-rich experience on
 
 + I can actively contribute to the website's community by adding my own reviews, photos, and recommendations.
 + Explore Deutschland fosters a sense of community among travelers. 
+
+## Technologies used
+- ### Languages:
+    + [Python 3.9.13](https://www.python.org/downloads/release/python-3913/): the main language utilized to create the website's server side.
+    + [JS](https://www.javascript.com/): the main language utilized to create the website's interactive elements.
+    + [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML): the markup language that was utilized to make the webpage.
+    + [CSS](https://developer.mozilla.org/en-US/docs/Web/css): the language of styling that was applied to the website.
+
+- ### Frameworks and libraries:
+    + [Django](https://www.djangoproject.com/): This entire logic was created using a Python framework.
+    + [jQuery](https://jquery.com/): was employed to send AJAX requests and manage click events.
+    
