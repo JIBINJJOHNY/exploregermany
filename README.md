@@ -180,3 +180,17 @@ The Review model represents reviews for tourist places.
 | Comment   | comment	   | TextField    | max_length=1000, blank=True, null=True  |
 | Created At         | created_at       | DateTimeField | auto_now_add=True    |
 
+5.**Package Model**
+The Package model represents different travel packages for exploring tourist places.
+
+| Field Name         | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| State | state    | ForeignKey    | to State, on_delete=models.CASCADE, blank=False, null=False   |
+|Package Type    | package_type       | CharField  | max_length=10, choices=[('1', '1 Day'), ('2', '2 Days')], blank=False, null=False  |
+| Price | price    | DecimalField    | max_digits=10, decimal_places=2, blank=False, null=False |
+| Places Limit   | places_limit	   | IntegerField    | choices=PLACES_LIMIT_CHOICES, blank=False, null=False  |
+|Tourist Places       | places     | ManyToManyField | to TouristPlace, blank=False, null=False
+ |
+
++ get_places_limit_display(): A method to get the display value of the places limit based on the choices.
++ get_description(): A method that returns a description based on the package type.
