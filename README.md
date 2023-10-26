@@ -194,3 +194,20 @@ The Package model represents different travel packages for exploring tourist pla
 
 + get_places_limit_display(): A method to get the display value of the places limit based on the choices.
 + get_description(): A method that returns a description based on the package type.
+
+6.**Booking Model**
+The Booking model represents a booking made by a user.
+
+
+| Field Name         | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| User | user    | ForeignKey    | to User, on_delete=models.CASCADE, blank=False, null=False   |
+|Booking Date   | date      | DateField  | blank=False, null=False |
+| Number of Guests | no_of_guests  | IntegerField   | validators=[MinValueValidator(1), MaxValueValidator(6)], default=1, blank=False, null=False |
+| Package  | package	   | ForeignKey   | to Package, on_delete=models.CASCADE, blank=False, null=False |
+|Booking Status    | status   |CharField | max_length=20, choices=STATUS_CHOICES, default='pending', blank=True, null=True|
+|Payment Amount   | payment_amount  |CharField | max_digits=10, decimal_places=2, blank=True, null=True|
+|Payment Method    | payment_method  |CharField| max_length=50, choices=PAYMENT_METHOD_CHOICES, blank=True|
+|Contact Email   | contact_email |EmailField| blank=False, null=False| 
+|Contact Phone   | contact_phone |CharField| max_length=15, blank=True| 
+|Special Requests  | special_requests |TextField| blank=True| 
