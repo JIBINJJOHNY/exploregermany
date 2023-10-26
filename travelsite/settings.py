@@ -15,7 +15,6 @@ from pathlib import Path
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
-import django_heroku
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -176,4 +175,3 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
 EMAIL_HOST_PASSWORD = os.environ.get('APP_PASSWORD')
 EMAIL_DEBUG = True
-django_heroku.settings(locals())
