@@ -3,11 +3,14 @@
 <html lang="en">
 
 <head>
+    {% comment %} Required meta tags {% endcomment %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="EXPLORE DEUTSCHLAND - YOUR ULTIMATE GUIDE TO GERMANY">
     <meta name="keywords" content="GERMANY, TRAVEL, DESTINATIONS, TOURISAM,DEUTSCHLAND">
-    <title>Explore Deutschland</title>
+
+    {% comment %} Favicon {% endcomment %}
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
@@ -16,6 +19,7 @@
 
     <!-- custom css file link -->
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <title>Explore Deutschland</title>
 </head>
 
 <header>

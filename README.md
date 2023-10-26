@@ -232,3 +232,21 @@ The app and associated resources were deployed as follows:
 - **Application Deployment**: The app was deployed to [Heroku](https://www.heroku.com). 
 
 - **Database Deployment**: The database is hosted on Heroku using PostgreSQL. Heroku provides a managed PostgreSQL database for this application.
+
+---
+
+## Credits
+
+- [GitHub](https://github.com/) for providing the design concept for the project.
+- [Django](https://www.djangoproject.com/) for the framework.
+- [Font awesome](https://fontawesome.com/) for the icons' free access.
+- [Heroku](https://www.heroku.com) for hosting of website
+- [jQuery](https://jquery.com/) for providing a range of tools to enhance the visual appeal of standard HTML code.
+- [Postgresql](https://www.postgresql.org/)for providing a database.
+- [birme](https://www.birme.net/): for providing free service to center and crop images.
+- [googlefonts](https://fonts.google.com/) for providing free fonts.
+- [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) for offering a free platform for testing the responsiveness of websites
+- [GoFullPage](https://gofullpage.com/)  for allowing to create free full web page screenshots;
+- [Favicon Generator](https://realfavicongenerator.net/) for providing a free platform to generate favicons.
+- [Mihai-Constantin](https://codepen.io/Mihai-Constantin) for bootstrap footer design.
+
