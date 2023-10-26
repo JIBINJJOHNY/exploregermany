@@ -5,6 +5,8 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import JsonResponse
 from .forms import ReviewForm
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
 
 
 def account_settings(request):
@@ -125,3 +127,17 @@ def delete_review(request, tourist_place_id, review_id):
 
     return render(request, 'delete_review.html', {'review': review, 'tourist_place_id': tourist_place_id})
 
+@login_required
+def account_delete(request):
+    # Check if the request method is POST
+    if request.method == 'POST':
+        user = request.user
+        # Delete the user's account
+        user.delete()
+        # Log the user out
+        logout(request)
+        # Redirect to a page after successful account deletion
+        return redirect('home')
+    else:
+        # Render a confirmation page for account deletion
+        return render(request, 'account_delete.html')

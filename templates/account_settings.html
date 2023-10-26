@@ -5,30 +5,40 @@
     <h1 class="mb-4">Account Settings</h1>
     <div class="mb-4">
         <p>Welcome, {{ user.first_name }} {{ user.last_name }}</p>
-    </div>
-    <div class="mb-4">
         <p>Email: {{ user.email }}</p>
     </div>
-    <h2 class="mb-4">Booked Packages</h2>
-    <ul>
-        {% for booking in user.booking_set.all %}
-        <li>
-            <strong>{{ booking.package }}</strong>
-            <p>Booking Date: {{ booking.date }}</p>
-            <p>Status: {{ booking.status }}</p>
-            <p>Payment Amount: ${{ booking.payment_amount }}</p>
-            <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Update</a>
-            <a href="{% url 'delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
-        </li>
-        {% empty %}
-        <li>No bookings available.</li>
-        {% endfor %}
-    </ul>
-    <div>
-        <a href="{% url 'password_reset' %}" class="btn btn-primary">Reset Password</a>
+
+    <!-- Button to reset email -->
+    <a href="{% url 'account_email' %}" class="btn btn-primary">Reset Email</a>
+
+    <!-- Button to reset password -->
+    <a href="{% url 'password_reset' %}" class="btn btn-primary">Reset Password</a>
+
+    <!-- Button to delete account -->
+    <button class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">Delete Account</button>
+
+    <!-- Delete Account Modal -->
+    <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog"
+        aria-labelledby="deleteAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteAccountModalLabel">Delete Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to delete your account? This action cannot be undone.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <a href="{% url 'account_delete' %}" class="btn btn-danger">Delete Account</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js">
     $(document).ready(function () {
         $(".delete-booking").click(function () {

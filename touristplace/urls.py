@@ -10,7 +10,7 @@ urlpatterns = [
     path('add_review/<int:tourist_place_id>/', views.add_review, name='add_review'),
     path('edit_review/<int:review_id>/', views.edit_review, name='edit_review'),
     path('view_review/<int:tourist_place_id>/reviews/', views.view_reviews, name='view_review'),
-    path('delete_review/<int:tourist_place_id>/<int:review_id>/', delete_review, name='delete_review')
-
+    path('delete_review/<int:tourist_place_id>/<int:review_id>/', delete_review, name='delete_review'),
+    path('account/delete/', views.account_delete, name='account_delete'),
 
 ]

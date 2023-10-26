@@ -33,3 +33,13 @@ The user acceptability test listed below was used to test usability. It was dist
 | 14           | Click user image, choose "Logout"| Dropdown menu with 3 options: Account settings,Bookings,Logout | Y |          |
 | 15           | Click from droupdown menu choose "Logout"| Takes user to log out page to confirm logout | Y |          |
 | 16           | Click "Logout" button  in the the page| Redirects user to home page | Y |          |
+| Navbar        |                        |                  |      |             |
+| 1           | Click on the Logo | Redirect to home page  | Y | Available to everyone |
+| 2           | Click on About | Redirection to about section | Y | Available to everyone |
+| 3           | Click on Destinations | Redirection to states of germany section | Y | Available to everyone|
+| 4           | Click on Packages | Redirect to package section | Y | Available  to everyone |
+| 5           | Click on Contact | Redirect to contact section | Y | Available  to everyone |
+| 6           | Click on user login image |  Dropdown menu with 3 options: Account settings,Bookings,Logout | Y |  Available only for registerd user |
+| 7           | Click on "Schedule" | Redirection to Schedule page | Y | Available to everyone |
+| 2           | Click on "Logout" button in the center of the page | Takes user to log out page to confirm logout | Y | Available to everyone |
+| Profile     |            |                  |      |             |
