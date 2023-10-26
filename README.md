@@ -115,3 +115,11 @@ As a Travel Enthusiast and Regular Explorer, I want a feature-rich experience on
 
 ## Design
 The Explore Deutschland travel website embodies a modern and user-centric design philosophy. With simplicity at its core, the website's minimalistic aesthetics and strategic use of white space create an uncluttered and visually engaging platform. Responsive design ensures a consistent experience across devices. Our purpose is to inspire and assist travelers in exploring Germany, making their journeys meaningful and memorable.
+
+
+---
+## Testing
+
+Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
+
+---
