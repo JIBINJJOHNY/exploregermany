@@ -40,6 +40,37 @@ The user acceptability test listed below was used to test usability. It was dist
 | 4           | Click on Packages | Redirect to package section | Y | Available  to everyone |
 | 5           | Click on Contact | Redirect to contact section | Y | Available  to everyone |
 | 6           | Click on user login image |  Dropdown menu with 3 options: Account settings,Bookings,Logout | Y |  Available only for registerd user |
-| 7           | Click on "Schedule" | Redirection to Schedule page | Y | Available to everyone |
-| 2           | Click on "Logout" button in the center of the page | Takes user to log out page to confirm logout | Y | Available to everyone |
-| Profile     |            |                  |      |             |
+| 7           | Click on accout settings| Redirect to account setting page | Y | Available only for registerd user|
+| 8         | Account settings page have three buttons: reset E-Mail,Reset Password,Delete Account.Click on reset E-Mail | Redirect to E-Mail resetting page | Y | Available only for registerd user |
+| 9        | Click on Reset password button  | Takes user to Password reset page | Y | Available only for registerd user |
+| 10        | Click on account delete button | Takes user to account delete page | Y | Available only for registerd user |
+|  11        | Click on bookings | Takes user to booking list page | Y | Available only for registerd user || 
+|  12        | If user have booking there is two button:Edit and delete .Click on edit button | Takes user to edit page | Y | Available only for registerd user || 
+|  13        | Click on delete button | Takes user to delete booking page | Y | Available only for registerd user || 
+|  14        | If there is no booking click on create booking button | Takes user to package list page | Y | Available only for registerd user || 
+|  15       | Click on logout | Takes user to logout page | Y | Available only for registerd user || 
+|  16        | Click on logout button | redirect to home page | Y | Available only for registerd user || 
+Home     |            |                  |      |             |
+| 1           |  Click on state name card | Take user to State detail page | Y | Available only Registered Users |
+| 2           |  Click on package list State button| Take user to packade detailed page | Y |  Available only registerd user  |
+|   State detail Page         |   |  |  |   |
+| 1          |  There are buttons for tourist attractions: In each state detail page, there are six buttons for tourist place.Click on any place button | Takes user to place detail page| Y | Available only registerd user |
+|  Place detail page         |   |   |  |  |
+| 1           |  Click on add review button |  take user to add review page| Y | Available only for registerd user |
+| 2           |  select rating | rating is selected | Y | Available only registerd user |
+| 3           |  Type review | review appear in comment box| Y | Available only registerd user |
+| 4           |  Click on submit review button | user will redirect to view review page | Y | Available only registerd user |
+| 5           |  In view review page if user reviews are there then there is two buttons appear:edit and delete | click on edit redirect to edit review page  | Y | Available only registerd user |
+| 6          |  Click on delete button| redirected to the review delete page | Y | Available only registerd user |
+|  Footer          |   |  |  |
+| 1          |  click on facebook icon | redirect to facebook page | Y | Available for everyone |
+| 2          |  Click on instagram icon | redirect to instagram page | Y | Available for every one |
+| 3          |  Click on twitter icon | redirected to twitter page | Y | Available for everyone |
+| 4          |  Click on linkedin icon | redirect linkedin page| Y | Available for everyone |
+ 5           | Click on Github | redirect to Github | Y | Available for every one | 
+| 1          |  click on Logo | redirect to home page | Y | Available for everyone |
+| 2          |  Click on home link | redirect to home page | Y | Available for every one |
+| 3          |  Click on about link | redirected to home page abot section| Y | Available for everyone |
+| 4          |  Click on destination link | redirect to home page destination section| Y | Available for everyone |
+ 5           | Click on Package link | redirect to home page page destination section| Y | Available for everyone |
+ 6           | Click on Contact link | redirect to home page contact section| Y | Available for everyone |
