@@ -154,7 +154,18 @@ The TouristPlace model represents information about a tourist place.
 | Slug | slug        | SlugField   | max_length=150, unique=True, blank=False, null=False   |
 | Google Map Src         | google_map_src       | CharField  | max_length=500, blank=True, null=True    |
 
+3.**Tourist Place Image Model**
+The TouristPlaceImage model represents images associated with a tourist place.
 
 
+| Field Name         | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| Tourist Place   | touristplace     | ForeignKey    | to TouristPlace, on_delete=models.CASCADE, blank=False, null=False   |
+| Image       | image        | CloudinaryField   | folder='touristplace_images', null=True, blank=True    |
+| Alt Text   | alt_text    | CharField     | max_length=300, blank=True, null=True   |
+| Default Image   | default_image   | BooleanField     | default=False   |
+| Is Active | is_active       | BooleanField   | default=True   |
+| Created At         | created_at       | DateTimeField | auto_now_add=True    |
+| Updated At        | updated_at      | DateTimeField | auto_now=True    |
 
 
