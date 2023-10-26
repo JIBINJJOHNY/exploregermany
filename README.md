@@ -141,8 +141,18 @@ The State model represents information about a state.
 | Image   | image   | CloudinaryField     | folder='state_images/', null=True, blank=True    |
 | Alt Text    | alt     | CharField     | max_length=250, blank=True, null=True   |
 
+2. **TouristPlace Model**
+The TouristPlace model represents information about a tourist place.
 
 
+| Field Name         | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| Name    | name      | CharField     | max_length=100, unique=True, blank=False, null=False   |
+| Description        | description        | TextField    | blank=False, null=False    |
+| Location   | location    | CharField     | max_length=100, blank=False, null=False    |
+| State    | state    | ForeignKey     | to State, on_delete=models.CASCADE, blank=False, null=False    |
+| Slug | slug        | SlugField   | max_length=150, unique=True, blank=False, null=False   |
+| Google Map Src         | google_map_src       | CharField  | max_length=500, blank=True, null=True    |
 
 
 
