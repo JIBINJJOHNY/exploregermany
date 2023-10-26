@@ -169,3 +169,14 @@ The TouristPlaceImage model represents images associated with a tourist place.
 | Updated At        | updated_at      | DateTimeField | auto_now=True    |
 
 
+4.**Review Model**
+The Review model represents reviews for tourist places.
+
+| Field Name         | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| User | user    | ForeignKey    | to User, on_delete=models.CASCADE, blank=False, null=False   |
+|Tourist Place     | tourist_place       | ForeignKey  | to TouristPlace, on_delete=models.CASCADE, blank=False, null=False   |
+| Rating  | rating    | IntegerField    | choices=STAR_CHOICES, default=1 |
+| Comment   | comment	   | TextField    | max_length=1000, blank=True, null=True  |
+| Created At         | created_at       | DateTimeField | auto_now_add=True    |
+
