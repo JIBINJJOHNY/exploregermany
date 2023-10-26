@@ -131,6 +131,7 @@ Please refer to the [TESTING.md](TESTING.md) file for all test-related documenta
 
 ### Data Modeling
 
+
 1. **State Model**
 The State model represents information about a state.
 
@@ -180,6 +181,16 @@ The Review model represents reviews for tourist places.
 | Comment   | comment	   | TextField    | max_length=1000, blank=True, null=True  |
 | Created At         | created_at       | DateTimeField | auto_now_add=True    |
 
+```python
+    STAR_CHOICES = (
+        ('1', '1'),
+        ('2', '2'),
+        ('3', '3'),
+        ('4', '4'),
+        ('5', '5'),
+    )
+```
+
 5.**Package Model**
 The Package model represents different travel packages for exploring tourist places.
 
@@ -211,3 +222,13 @@ The Booking model represents a booking made by a user.
 |Contact Email   | contact_email |EmailField| blank=False, null=False| 
 |Contact Phone   | contact_phone |CharField| max_length=15, blank=True| 
 |Special Requests  | special_requests |TextField| blank=True| 
+
+
+## Deployment
+
+
+The app and associated resources were deployed as follows:
+
+- **Application Deployment**: The app was deployed to [Heroku](https://www.heroku.com). 
+
+- **Database Deployment**: The database is hosted on Heroku using PostgreSQL. Heroku provides a managed PostgreSQL database for this application.
