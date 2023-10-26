@@ -250,3 +250,36 @@ The app and associated resources were deployed as follows:
 - [Favicon Generator](https://realfavicongenerator.net/) for providing a free platform to generate favicons.
 - [Mihai-Constantin](https://codepen.io/Mihai-Constantin) for bootstrap footer design.
 
+##  Images
+
+#### States
+[User login image](https://www.flaticon.com/free-icon/user_6017051) 
+[Carousel 1](https://global.rutgers.edu/program-search/details/fu-best-freie-university-germany) 
+[Carousel 2](https://www.aesu.com/blog/marvel-medieval-germany-romantic-road/) 
+[Carousel 3](https://travelaway.me/beautiful-places-germany/) 
+[Berlin](https://www.glint-berlin.de/en/rooftop-bars/)
+[Thuringia](https://www.thueringen-entdecken.de/en/our-history)
+[Rhineland-Palatinate](https://www.tsy.my/germany)
+[North Rhine-Westphalia](https://www.tripsavvy.com/best-free-things-to-do-in-cologne-1520220)
+[Bavaria](https://www.planetware.com/tourist-attractions-/bavaria-state-d-ba-ba.htm)
+[Baden-Württemberg](https://www.getyourguide.com/heidelberg-l24/)
+[Hessen](https://tourscanner.com/blog/things-to-do-in-frankfurt/)
+[Bremen](https://www.bremen.eu/tourism/sights/bremen-town-musicians)
+[Brandenburg](https://www.lonelyplanet.com/germany/around-berlin)
+#### Tourist Places
+[Berlin Cathedral](https://www.getyourguide.com/berlin-cathedral-l3097/)
+[Berlin Cathedral](https://www.croisieurope.co.uk/news/croisimag-april-2023)
+[Berlin Cathedral](https://www.photohound.co/country/germany/images)
+[Berlin Cathedral](https://www.flickr.com/photos/grahamcsmith/6250668673)
+[Berlin Cathedral](https://www.flickr.com/photos/smileymanwithahat/14318483660)
+[Berline Fernsehturm ](https://motelplus-berlin.de/experience-berlin/)
+[Brandenburg Gate](https://prussianhistory.com/5-prussian-historical-landmarks-to-visit/)
+[Berlinwall Memorial](https://www.stripes.com/migration/thirty-years-after-its-fall-berlin-wall-memorial-is-a-chilling-reminder-of-the-past-1.605502)
+[Reichstag Building](https://www.history.ac.uk/library/collections/german-history)
+[Tiergarten](https://stock.adobe.com/de/search?k=berlin-tiergarten)
+[Bad Homburg](https://www.schloesser-hessen.de/en/bad-homburg)
+[Frankfurt](https://www.linkedin.com/in/nathanvallred)
+[Marburg](https://www.britannica.com/place/Marburg-Germany)
+[Römerberg](https://www.globalarbitrationnews.com/2022/03/03/german-supreme-court-confirms-that-achmea-decision-is-transferable-to-arbitration-clauses-in-other-bits/)
+[Rüdesheim am Rhein](https://www.tripadvisor.com/HotelsList-Frankfurt-Quiet-Hotels-zfp848631.html)
+[Wiesbaden](https://www.germany.travel/en/cities-culture/spa-towns.html)

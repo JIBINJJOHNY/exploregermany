@@ -4,8 +4,8 @@ from package.models import Package
 from django.contrib.auth.decorators import login_required
 from django.db.models import Avg
 from django.http import JsonResponse
-from .forms import ReviewForm,SearchForm
-from django.db.models import Q
+from .forms import ReviewForm
+
 
 def account_settings(request):
    
