@@ -1,1 +1,1 @@
-web: gunicorn travelsite.wsgi:application
+web: gunicorn travelsite.wsgi

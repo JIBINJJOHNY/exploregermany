@@ -123,3 +123,28 @@ The Explore Deutschland travel website embodies a modern and user-centric design
 Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
 
 ---
+
+## Information Architecture
+
+### Database
+* SQLite was used to create the database in the early phases of the project. Next, PostgreSQL was used to migrate the database.
+
+### Data Modeling
+
+1. **State Model**
+The State model represents information about a state.
+
+|Field Name      | Database Key  | Field Type    | Validation |
+| ------------- | ------------- | ------------- | ---------- |
+| Name      | name      | CharField     |  max_length=100,unique=True,  blank=False, null=False  |
+|Description       | description       | TextField   | blank=False, null=False   |
+| Image   | image   | CloudinaryField     | folder='state_images/', null=True, blank=True    |
+| Alt Text    | alt     | CharField     | max_length=250, blank=True, null=True   |
+
+
+
+
+
+
+
+
