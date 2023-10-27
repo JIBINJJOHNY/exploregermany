@@ -2,22 +2,22 @@
 {% load static %}
 
 {% block content %}
-<section class="background-image" style="background-image: url('{{ place.images.first.image.url }}')">
+<section class="background-image" style="background-image: url('{{ state.image.url }}')">
     <div class="overlay">
         <div class="container">
             <div class="heading">
-                <h1>{{ place.name }}</h1>
+                <h1 class="display-4">{{ place.name }}</h1>
             </div>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-6">
                     <div class="description-box">
-                        <p>{{ place.description }}</p>
-                        <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0"
-                            marginwidth="0" src="{{ place.google_map_src }}"></iframe>
+                        <p class="lead">{{ place.description }}</p>
+                        <iframe class="embed-responsive" src="{{ place.google_map_src }}" frameborder="0" scrolling="no"
+                            marginheight="0" marginwidth="0"></iframe>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <h2 class="mb-4">Reviews</h2>
+                    <h2 class="mb-4 review">Reviews</h2>
                     <a href="{% url 'add_review' place.id %}" class="btn btn-primary">Add a Review</a>
                     <ul class="list-group reviews-list">
                         {% for review in reviews %}
@@ -48,7 +48,6 @@
                 </div>
 
                 <div class="col-md-8">
-                    <!-- Your image gallery content here -->
                     <section class="image-gallery">
                         <h2>Image Gallery</h2>
                         <ul class="list-unstyled">
@@ -66,13 +65,11 @@
     </div>
 </section>
 
-<!-- Bootstrap Modal for Large Images -->
 <div class="modal fade" id="largeImageModal" tabindex="-1" role="dialog" aria-labelledby="largeImageModalLabel"
     aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-body text-center">
-                <!-- Large image content will be loaded here using AJAX -->
                 <img src="" alt="Large Image" class="img-fluid">
             </div>
         </div>

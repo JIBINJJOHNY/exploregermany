@@ -1,3 +1,4 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +7,6 @@
 
 html,
 body {
-
     width: 100%;
     height: 100%;
 }
@@ -15,6 +15,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* Navbar styles */
 .navbar .user-image {
     max-width: 30px;
     background-color: #ffffff;
@@ -22,17 +23,12 @@ body {
 
 .navbar .user-image::after {
     content: none;
-    /* This hides the down arrow */
 }
 
-
-/* home page*/
-
+/* Home page styles */
 .card-img-top {
     height: 200px;
-    /* Set the desired fixed height for the card images */
     object-fit: cover;
-    /* Ensure images maintain their aspect ratio and cover the space */
 }
 
 .card-link {
@@ -63,12 +59,10 @@ body {
 }
 
 .our-packages {
-
     margin-bottom: 50px;
-    /* Add space at the bottom of the section */
 }
 
-/*state detail page */
+/* State detail page styles */
 .background-image {
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,10 +72,8 @@ body {
     align-items: center;
     min-height: 100vh;
     position: relative;
-    /* Add relative positioning */
 }
 
-/* Add an overlay with background color */
 .background-overlay {
     position: absolute;
     top: 0;
@@ -89,16 +81,12 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-
 }
 
-/* Style for text or content on the overlay */
 .overlay-content {
     position: relative;
     z-index: 1;
-    /* Bring content to the front */
     color: white;
-    /* Text color */
     text-align: justify;
 }
 
@@ -106,13 +94,7 @@ body {
     text-decoration: none;
 }
 
-
-
-
-/*place detail page */
-
-
-/* New style for the overlay */
+/* Place detail page styles */
 .overlay {
     position: absolute;
     top: 0;
@@ -121,21 +103,17 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 0;
-
 }
 
-/* Text color styles */
 .description-box {
     text-align: justify;
     color: white;
-    /* Set text color to white */
 }
 
 .heading {
     text-align: center;
     margin-top: 20px;
     color: white;
-    /* Set text color to white */
 }
 
 .image-gallery {
@@ -164,6 +142,10 @@ body {
     height: auto;
 }
 
+.review {
+    color: #ffffff;
+}
+
 .review-item {
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
@@ -176,7 +158,6 @@ body {
     text-align: left;
 }
 
-
 .rating {
     border: none;
 }
@@ -200,27 +181,26 @@ body {
     cursor: pointer;
 }
 
-.rating>label {
+rating>label {
     color: #ddd;
     cursor: pointer;
 }
 
-.rating>input:checked~label,
+rating>input:checked~label,
 .rating:not(:checked)>label:hover,
 .rating:not(:checked)>label:hover~label {
     color: #d0a91b;
 }
 
-.rating>input:checked+label:hover,
-.rating>input:checked~label:hover,
-.rating>label:hover~input:checked~label,
-.rating>input:checked~label:hover~label {
+rating>input:checked+label:hover,
+rating>input:checked~label:hover,
+rating>label:hover~input:checked~label,
+rating>input:checked~label:hover~label {
     color: #d0a91b;
 }
 
 .form-group {
     resize: none;
-    /* Disable resizing */
 }
 
 .reviews-list {
@@ -228,84 +208,16 @@ body {
     padding: 0;
 }
 
-/* edit review page */
-/* Styling star rating */
-.rating {
-    border: none;
-    float: left;
+/* booking form page */
+.create-booking {
+    color: white;
 }
 
-.rating>input {
-    display: none;
+.no-resize {
+    resize: none;
 }
 
-.rating>label:before {
-    content: '\f005';
-    font-family: FontAwesome;
-    margin: 5px;
-    font-size: 1.5rem;
-    display: inline-block;
-    cursor: pointer;
-}
-
-.rating>.half:before {
-    content: '\f089';
-    position: absolute;
-    cursor: pointer;
-}
-
-.rating>label {
-    color: #ddd;
-    float: right;
-    cursor: pointer;
-}
-
-.rating>input:checked~label,
-.rating:not(:checked)>label:hover,
-.rating:not(:checked)>label:hover~label {
-    color: #d0a91b;
-}
-
-.rating>input:checked+label:hover,
-.rating>input:checked~label:hover,
-.rating>label:hover~input:checked~label,
-.rating>input:checked~label:hover~label {
-    color: #d0a91b;
-}
-
-/* view review page */
-/* Style the review items */
-.review-item {
-    background-color: #e4dfdf;
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    width: 30%;
-    /* Limit the width of the review items */
-    text-align: left;
-    /* Align text within the review items to the left */
-}
-
-.rating .fas.fa-star {
-    font-size: 24px;
-    color: #FFD700;
-    /* Gold color for rated stars */
-}
-
-.rating .far.fa-star {
-    font-size: 24px;
-    color: #dcdcd9;
-    /* Default color for unrated stars */
-}
-
-.review-actions {
-    margin-top: 10px;
-}
-
-
-/* Package_detail page */
+/* Package detail page styles */
 .content-container {
     background-color: rgba(255, 255, 255, 0.3);
     padding: 20px;
@@ -327,11 +239,10 @@ body {
     flex: 1;
 }
 
-.package-description {
+package-description {
     flex: 2;
     padding: 10px;
 }
-
 
 .book-now-button {
     display: flex;
@@ -339,24 +250,21 @@ body {
     justify-content: center;
 }
 
-
-/*Booking_detail page*/
+/* Booking detail page styles */
 .booking-container {
     min-height: 100vh;
 }
 
-.center-form {
+center-form {
     text-align: center;
     margin-top: 20px;
-    /* Add some top margin for spacing */
 }
 
-.booking-list-content {
+booking-list-content {
     min-height: 100vh;
-    /* Adjust the height as needed */
 }
 
-/* Footer */
+/* Footer styles */
 .footer {
     background-color: #414141;
     width: 100%;
@@ -375,8 +283,7 @@ body {
     vertical-align: top;
 }
 
-/* footer left*/
-
+/* Footer left */
 .footer .footer-left {
     width: 33%;
     padding-right: 15px;
@@ -390,7 +297,7 @@ body {
     margin: 0;
 }
 
-.footer .about span {
+footer .about span {
     display: block;
     color: #ffffff;
     font-size: 14px;
@@ -417,14 +324,12 @@ body {
     margin-bottom: 5px;
 }
 
-
-/* footer center*/
-
+/* Footer center */
 .footer .footer-center {
     width: 30%;
 }
 
-.footer .footer-center i {
+footer .footer-center i {
     background-color: #33383b;
     color: #ffffff;
     font-size: 25px;
@@ -449,53 +354,52 @@ body {
     margin: 0;
 }
 
-.footer .footer-center p span {
+footer .footer-center p span {
     display: block;
     font-weight: normal;
     font-size: 14px;
     line-height: 2;
 }
 
-.footer .footer-center p a {
+footer .footer-center p a {
     color: #0099ff;
     text-decoration: none;
 }
 
-/* footer right*/
-
+/* Footer right */
 .footer .footer-right {
     width: 35%;
 }
 
-.footer h2 {
+footer h2 {
     color: #ffffff;
     font-size: 36px;
     font-weight: normal;
     margin: 0;
 }
 
-.footer h2 span {
+footer h2 span {
     color: #0099ff;
 }
 
-.footer .menu {
+footer .menu {
     color: #ffffff;
     margin: 20px 0 12px;
     padding: 0;
 }
 
-.footer .menu a {
+footer .menu a {
     display: inline-block;
     line-height: 1.8;
     text-decoration: none;
     color: inherit;
 }
 
-.footer .menu a:hover {
+footer .menu a:hover {
     color: #0099ff;
 }
 
-.footer .name {
+footer .name {
     color: #0099ff;
     font-size: 14px;
     font-weight: normal;

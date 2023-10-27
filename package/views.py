@@ -34,6 +34,7 @@ from django.core.exceptions import ValidationError
 @login_required
 def booking_create(request, package_id):
     package = get_object_or_404(Package, pk=package_id)
+    state = package.state
 
     if request.method == 'POST':
         form = BookingForm(request.POST)
@@ -57,13 +58,14 @@ def booking_create(request, package_id):
         }
         form = BookingForm(initial=initial_data)
 
-    return render(request, 'booking_form.html', {'form': form})
+    return render(request, 'booking_form.html', {'form': form,'state': state})
 
 @login_required
 def booking_detail(request, booking_id):
     # View to display the details of a single booking
     booking = get_object_or_404(Booking, pk=booking_id)
-    return render(request, 'booking_detail.html', {'booking': booking})
+    state = package.state
+    return render(request, 'booking_detail.html', {'booking': booking,'state': state})
 
 @login_required
 def booking_list(request):

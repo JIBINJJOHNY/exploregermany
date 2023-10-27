@@ -1,40 +1,65 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="container">
-    <h1>Create a New Booking</h1>
-    <form method="post" class="form">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="{{ form.date.id_for_label }}">Booking Date</label>
-            {{ form.date }}
+<section class="background-image" style="background-image: url('{{ state.image.url }}')">
+    <div class="container booking-container">
+        <h1 class="text-center create-booking">Create a New Booking</h1>
+        <div class="border p-3 mx-auto">
+            <form method="post" class="form">
+                {% csrf_token %}
+                <div class="form-group row">
+                    <label for="{{ form.date.id_for_label }}" class="col-sm-6 col-form-label">Booking Date</label>
+                    <div class="col-sm-6">
+                        {{ form.date }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.no_of_guests.id_for_label }}" class="col-sm-6 col-form-label">Number of Guests
+                        (Max
+                        6)</label>
+                    <div class="col-sm-6">
+                        {{ form.no_of_guests }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.package.id_for_label }}" class="col-sm-6 col-form-label">Select a
+                        Package</label>
+                    <div class="col-sm-6">
+                        {{ form.package }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.payment_method.id_for_label }}" class="col-sm-6 col-form-label">Payment
+                        Method</label>
+                    <div class="col-sm-6">
+                        {{ form.payment_method }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.contact_email.id_for_label }}" class="col-sm-6 col-form-label">Contact
+                        Email</label>
+                    <div class="col-sm-6">
+                        {{ form.contact_email }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.contact_phone.id_for_label }}" class="col-sm-6 col-form-label">Contact
+                        Phone</label>
+                    <div class="col-sm-6">
+                        {{ form.contact_phone }}
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="{{ form.special_requests.id_for_label }}" class="col-sm-6 col-form-label">Special
+                        Requests</label>
+                    <div class="col-sm-6">
+                        <textarea name="{{ form.special_requests.name }}" id="{{ form.special_requests.id }}" rows="4"
+                            class="form-control no-resize"></textarea>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary d-block mx-auto">Create Booking</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="{{ form.no_of_guests.id_for_label }}">Number of Guests (Max 6)</label>
-            {{ form.no_of_guests }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.package.id_for_label }}">Select a Package</label>
-            {{ form.package }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.payment_method.id_for_label }}">Payment Method</label>
-            {{ form.payment_method }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.contact_email.id_for_label }}">Contact Email</label>
-            {{ form.contact_email }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.contact_phone.id_for_label }}">Contact Phone</label>
-            {{ form.contact_phone }}
-        </div>
-        <div class="form-group">
-            <label for="{{ form.special_requests.id_for_label }}">Special Requests</label>
-            {{ form.special_requests }}
-        </div>
-        <button type="submit" class="btn btn-primary">Create Booking</button>
-    </form>
-</div>
-<script src="{% static 'js/booking_form.js' %}"></script>
+    </div>
+</section>
 {% endblock %}
