@@ -62,6 +62,13 @@ body {
     margin-bottom: 50px;
 }
 
+/*Account page */
+.accout_page {
+    background-color: rgba(163, 155, 155, 0.5);
+    padding: 20px;
+    min-height: 80vh;
+}
+
 /* State detail page styles */
 .background-image {
     background-size: cover;
