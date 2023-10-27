@@ -230,7 +230,7 @@ The Booking model represents a booking made by a user.
 
 The app and associated resources were deployed as follows:
 
-- **Application Deployment**: The app was deployed to [Heroku](https://www.heroku.com). 
+- **Application Deployment**: The site was deployed to [Heroku](https://www.heroku.com). 
 
 - **Database Deployment**: The database is hosted on Heroku using PostgreSQL. Heroku provides a managed PostgreSQL database for this application.
 
