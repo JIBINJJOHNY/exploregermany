@@ -35,19 +35,6 @@ body {
     text-decoration: none;
 }
 
-.about-container {
-    display: flex;
-    flex-direction: row-reverse;
-    text-align: justify;
-    padding: 20px;
-    margin-left: 300px;
-}
-
-.about-content {
-    flex: 1;
-    padding-left: 30px;
-}
-
 .flag-image {
     max-width: 200px;
     height: auto;
@@ -67,6 +54,17 @@ body {
     background-color: rgba(163, 155, 155, 0.5);
     padding: 20px;
     min-height: 80vh;
+}
+
+.booking-list {
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    min-height: 80vh;
+}
+
+ul {
+    list-style: none;
 }
 
 /* State detail page styles */
