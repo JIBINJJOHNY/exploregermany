@@ -98,11 +98,14 @@
     <div class="text-center mt-4">
         <div id="state-list">
             {% for state in states %}
-            <a href="{% url 'package-detail' state.id %}" class="btn btn-info">{{ state.name }}</a>
+            <a href="{% url 'package-detail' state.id %}" class="btn btn-info mb-2 mr-2">{{ state.name }}</a>
             {% endfor %}
         </div>
     </div>
 </section>
+
+
+
 
 
 
