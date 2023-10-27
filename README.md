@@ -286,3 +286,22 @@ For any documentation pertaining to deployment, please refer to the [DEPLOYMENT.
 [Römerberg](https://www.globalarbitrationnews.com/2022/03/03/german-supreme-court-confirms-that-achmea-decision-is-transferable-to-arbitration-clauses-in-other-bits/)
 [Rüdesheim am Rhein](https://www.tripadvisor.com/HotelsList-Frankfurt-Quiet-Hotels-zfp848631.html)
 [Wiesbaden](https://www.germany.travel/en/cities-culture/spa-towns.html)
+
+
+
+
+
+
+
+
+
+
+
+
+## Acknowledgments
+
+
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova) my mentor has been a great supporter, guiding me through the development of the project and helping me to learn a lot of new things by challenging me to do something new.
+- [Code Institute](https://codeinstitute.net/de/)  tutors and Slack community members for their support and help.
+- [Iuliia Konovalova](https://github.com/IuliiaKonovalova) for review star rating idea .
+- [Mihai-Constantin](https://codepen.io/Mihai-Constantin) footer design.
