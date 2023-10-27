@@ -97,10 +97,15 @@ def edit_review(request, review_id):
             form.save()
             return redirect('view_review', tourist_place_id=review.tourist_place_id)
     else:
-        # Initialize the form with the existing review data
         form = ReviewForm(instance=review)
 
-    return render(request, 'edit_review.html', {'form': form, 'review': review})
+    context = {
+        'form': form,
+        'review': review,
+        'place': review.tourist_place,  # Include 'place' in the context
+    }
+
+    return render(request, 'edit_review.html', context)
 
 @login_required
 def view_reviews(request, tourist_place_id):

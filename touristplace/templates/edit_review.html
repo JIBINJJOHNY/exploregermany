@@ -1,30 +1,33 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container">
-    <h1>Edit Review</h1>
-    <form method="post" enctype="multipart/form-data">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <div class="rating">
-                <input type="radio" id="star5" name="rating" value="5"
-                    {% if review.rating == 5 %}checked{% endif %}><label for="star5" class="full"></label>
-                <input type="radio" id="star4" name="rating" value="4"
-                    {% if review.rating == 4 %}checked{% endif %}><label for="star4" class="full"></label>
-                <input type="radio" id="star3" name="rating" value="3"
-                    {% if review.rating == 3 %}checked{% endif %}><label for="star3" class="full"></label>
-                <input type="radio" id="star2" name="rating" value="2"
-                    {% if review.rating == 2 %}checked{% endif %}><label for="star2" class="full"></label>
-                <input type="radio" id="star1" name="rating" value="1"
-                    {% if review.rating == 1 %}checked{% endif %}><label for="star1" class="full" title="Awful"></label>
+<section class="background-image" style="background-image: url('{{ place.images.first.image.url }}')">
+    <div class="container">
+        <h1>Edit Review</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <div class="rating">
+                    <input type="radio" id="star5" name="rating" value="5"
+                        {% if review.rating == 5 %}checked{% endif %}><label for="star5" class="full"></label>
+                    <input type="radio" id="star4" name="rating" value="4"
+                        {% if review.rating == 4 %}checked{% endif %}><label for="star4" class="full"></label>
+                    <input type="radio" id="star3" name="rating" value="3"
+                        {% if review.rating == 3 %}checked{% endif %}><label for="star3" class="full"></label>
+                    <input type="radio" id="star2" name="rating" value="2"
+                        {% if review.rating == 2 %}checked{% endif %}><label for="star2" class="full"></label>
+                    <input type="radio" id="star1" name="rating" value="1"
+                        {% if review.rating == 1 %}checked{% endif %}><label for="star1" class="full"
+                        title="Awful"></label>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="comment">Your Review:</label>
-            <textarea id="comment" name="comment" rows="5" class="form-control">{{ review.comment }}</textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Update Review</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="comment">Your Review:</label>
+                <textarea id="comment" name="comment" rows="5" class="form-control">{{ review.comment }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Review</button>
+        </form>
+    </div>
+</section>
 {% endblock %}
