@@ -1,5 +1,10 @@
-/* Global styles */
-* {
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
+
+
+/*------ Global Settings------*/
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -231,12 +236,22 @@ rating>input:checked~label:hover~label {
     color: white;
 }
 
+.rated {
+    color: gold;
+}
+
 .edit_review {
     color: white;
 }
 
+/* Add review page */
 .add_review {
     color: white;
+}
+
+.star-rating i.checked {
+    color: gold;
+    /* Change the color to gold for checked stars */
 }
 
 /* booking create page*/
