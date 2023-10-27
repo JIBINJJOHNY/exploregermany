@@ -3,7 +3,7 @@
 {% block content %}
 <section class="background-image" style="background-image: url('{{ place.images.first.image.url }}')">
     <div class="container">
-        <h1>Edit Review</h1>
+        <h1 class="edit_review">Edit Review</h1>
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">

@@ -222,6 +222,14 @@ rating>input:checked~label:hover~label {
     color: white;
 }
 
+.edit_review {
+    color: white;
+}
+
+.add_review {
+    color: white;
+}
+
 /* booking create page*/
 .booking-form-container {
     background-color: rgba(255, 255, 255, 0.7);

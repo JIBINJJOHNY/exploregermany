@@ -3,53 +3,52 @@
 {% block content %}
 <section class="background-image" style="background-image: url('{{ place.images.first.image.url }}')">
 
-    <body id="review">
-        <div class="review-container" style="background-image: url('{{ place.images.image.url }}')">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h1 class="review-heading">Add a Review for {{ tourist_place.name }}</h1>
-                    </div>
-                </div>
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="form-group">
-                                <fieldset class="rating">
-                                    <input type="radio" id="star1" name="rating" value="1">
-                                    <label for="star1" title="Awful"></label>
-                                    <input type="radio" id="star2" name="rating" value="2">
-                                    <label for="star2"></label>
-                                    <input type="radio" id="star3" name="rating" value="3">
-                                    <label for="star3"></label>
-                                    <input type="radio" id="star4" name="rating" value="4">
-                                    <label for="star4"></label>
-                                    <input type="radio" id="star5" name="rating" value="5">
-                                    <label for="star5"></label>
-                                </fieldset>
 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="form-group">
-                                <label for="comment">Your Review:</label>
-                                {{ form.comment }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="form-group" style="margin-top: 20px;">
-                                <button type="submit" class="btn btn-primary ">Submit Review</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 class="review-heading">Add a Review for {{ tourist_place.name }}</h1>
             </div>
         </div>
-    </body>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="form-group">
+                        <fieldset class="rating">
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1" title="Awful"></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"></label>
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5"></label>
+                        </fieldset>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="form-group">
+                        <label for="comment">Your Review:</label>
+                        {{ form.comment }}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="form-group" style="margin-top: 20px;">
+                        <button type="submit" class="btn btn-primary ">Submit Review</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
 </section>
 {% endblock %}
