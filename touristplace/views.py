@@ -74,22 +74,19 @@ def add_review(request, tourist_place_id):
             review = form.save(commit=False)
             review.tourist_place = tourist_place
             review.user = request.user
-
-            # Save the rating
             review.rating = form.cleaned_data['rating']
-
             review.save()
 
             return redirect('view_review', tourist_place_id=tourist_place_id)
     else:
         form = ReviewForm()
 
-        context = {
-        'tourist_place': tourist_place,  # Make sure 'tourist_place' is included in the context
+    context = {
+        'tourist_place': tourist_place,
         'form': form,
+        'place': tourist_place,  # Include 'place' in the context
     }
     return render(request, 'add_review.html', context)
-
 @login_required
 def edit_review(request, review_id):
     review = get_object_or_404(Review, pk=review_id)
