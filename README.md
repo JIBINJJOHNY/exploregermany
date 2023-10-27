@@ -234,6 +234,8 @@ The app and associated resources were deployed as follows:
 
 - **Database Deployment**: The database is hosted on Heroku using PostgreSQL. Heroku provides a managed PostgreSQL database for this application.
 
+For any documentation pertaining to deployment, please refer to the [DEPLOYMENT.md](DEPLOYMENT.md) file.
+
 ---
 
 ## Credits
