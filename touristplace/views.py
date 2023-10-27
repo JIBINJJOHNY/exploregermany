@@ -126,14 +126,19 @@ def view_reviews(request, tourist_place_id):
 @never_cache
 def delete_review(request, tourist_place_id, review_id):
     review = get_object_or_404(Review, pk=review_id)
-    
+
     if request.method == 'POST':
         # Handle the confirmation of deletion here if you want
         review.delete()
         return redirect('view_review', tourist_place_id=tourist_place_id)
 
-    return render(request, 'delete_review.html', {'review': review, 'tourist_place_id': tourist_place_id})
+    context = {
+        'review': review,
+        'tourist_place_id': tourist_place_id,
+        'place': review.tourist_place,  # Include 'place' in the context
+    }
 
+    return render(request, 'delete_review.html', context)
 @login_required
 def account_delete(request):
     # Check if the request method is POST
