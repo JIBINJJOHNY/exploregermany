@@ -7,7 +7,7 @@ from django.http import JsonResponse
 from .forms import ReviewForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
-
+from django.views.decorators.cache import never_cache
 
 def account_settings(request):
    
@@ -117,6 +117,7 @@ def view_reviews(request, tourist_place_id):
 from django.urls import reverse
 
 @login_required
+@never_cache
 def delete_review(request, tourist_place_id, review_id):
     review = get_object_or_404(Review, pk=review_id)
     

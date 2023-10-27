@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.views.decorators.cache import never_cache
 import smtplib
 import ssl
 # Create your views here.
@@ -64,7 +65,7 @@ def booking_create(request, package_id):
 def booking_detail(request, booking_id):
     # View to display the details of a single booking
     booking = get_object_or_404(Booking, pk=booking_id)
-    state = package.state
+    state = booking.package.state 
     return render(request, 'booking_detail.html', {'booking': booking,'state': state})
 
 @login_required
@@ -110,7 +111,7 @@ def update_booking(request, booking_id):
         form = BookingForm(instance=booking)
 
     return render(request, 'update_booking.html', {'form': form, 'booking': booking})
-
+@never_cache
 def delete_booking(request, booking_id):
     # Logic to delete the booking with the given ID
     booking = get_object_or_404(Booking, pk=booking_id)
@@ -178,3 +179,4 @@ def book_now(request, booking_id):
             return HttpResponse("An error occurred while booking.")
     
     return render(request, 'booking_detail.html', {'booking': booking, 'alert_message': alert_message})
+    

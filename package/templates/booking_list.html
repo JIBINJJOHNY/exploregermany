@@ -9,7 +9,7 @@
         <li>
             <a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a>
             <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'confirm_delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'booking_confirm_delete' booking.id %}" class="btn btn-danger">Delete</a>
         </li>
         {% empty %}
         <li>No bookings available</li>

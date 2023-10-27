@@ -217,6 +217,22 @@ rating>input:checked~label:hover~label {
     resize: none;
 }
 
+/* booking create page*/
+.booking-form-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* booking detail page */
+.booking-details-box {
+    background-color: rgba(255, 255, 255, 0.7);
+    /* Transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
 /* Package detail page styles */
 .content-container {
     background-color: rgba(255, 255, 255, 0.3);
