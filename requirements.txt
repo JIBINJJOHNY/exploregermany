@@ -26,5 +26,4 @@ sqlparse==0.4.4
 typing_extensions==4.8.0
 urllib3==2.0.7
 webencodings==0.5.1
-
-
+django-heroku==0.3.1

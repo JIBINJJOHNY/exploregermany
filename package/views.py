@@ -38,12 +38,18 @@ def booking_create(request, package_id):
     state = package.state
 
     if request.method == 'POST':
+        messages1 = ''
         form = BookingForm(request.POST)
         if form.is_valid():
             # Check if the date is in the past and restrict it to the future
             booking_date = form.cleaned_data['date']
             if booking_date < timezone.now().date():
+                message_alert="Booking date must be from the current date onward"
+                messages1.append(message_alert)
+                request.session['messages1']= messages1
+                print('alert')
                 form.add_error('date', ValidationError('Booking date must be from the current date onward'))
+                return render(request, 'booking_form.html', {'form': form,'state': state ,'alert_message':alert_message})
             # Check if the number of guests exceeds the maximum
             elif form.cleaned_data['no_of_guests'] > 6:
                 form.add_error('no_of_guests', ValidationError('Maximum number of guests is 6'))
