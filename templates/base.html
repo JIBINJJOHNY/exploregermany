@@ -142,12 +142,15 @@
 
 <!-- JavaScript -->
 <script>
-    setTimeout(function () {
-        let messagesDj = document.getElementById('messages-notes-main');
-        if (messagesDj) {
-            messagesDj.style.display = 'none';
-        }
-    }, 2500);
+    // Wait for the DOM to be fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(function () {
+            let messagesDj = document.getElementById('messages-notes-main');
+            if (messagesDj) {
+                messagesDj.style.display = 'none';
+            }
+        }, 2500);
+    });
 </script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"

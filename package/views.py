@@ -34,35 +34,29 @@ class PackageDetailView(DetailView):
 
 from django.core.exceptions import ValidationError
 
+from django.contrib import messages
+
 @login_required
 def booking_create(request, package_id):
     package = get_object_or_404(Package, pk=package_id)
     state = package.state
 
     if request.method == 'POST':
-        messages1 = ''
         form = BookingForm(request.POST)
+
         if form.is_valid():
-            # Check if the date is in the past and restrict it to the future
             booking_date = form.cleaned_data['date']
-            print(f'Current Date: {timezone.now().date()}')
-            if booking_date < timezone.now().date():
-                message_alert="Booking date must be from the current date onward"
-                messages1.append(message_alert)
-                request.session['messages1']= messages1
-                print('alert')
-                print(f'Booking Date: {booking_date}')
-                print(f'Current Date: {timezone.now().date()}')
-                form.add_error('date', ValidationError('Booking date must be from the current date onward'))
-                return render(request, 'booking_form.html', {'form': form,'state': state ,'messages1':messages1})
-            # Check if the number of guests exceeds the maximum
-            elif form.cleaned_data['no_of_guests'] > 6:
-                form.add_error('no_of_guests', ValidationError('Maximum number of guests is 6'))
-            else:
-                new_booking = form.save(commit=False)
-                new_booking.user = request.user
-                new_booking.save()
-                return redirect('booking_detail', booking_id=new_booking.id)
+
+            new_booking = form.save(commit=False)
+            new_booking.user = request.user
+            new_booking.save()
+            return redirect('booking_detail', booking_id=new_booking.id)
+        else:
+            # Store form errors in messages framework
+            for field, error_list in form.errors.items():
+                for error in error_list:
+                    messages.error(request, f'Error in {field}: {error}')
+
     else:
         initial_data = {
             'user_full_name': request.user.get_full_name(),
@@ -70,7 +64,8 @@ def booking_create(request, package_id):
         }
         form = BookingForm(initial=initial_data)
 
-    return render(request, 'booking_form.html', {'form': form,'state': state})
+    return render(request, 'booking_form.html', {'form': form, 'state': state})
+
 @login_required
 def booking_detail(request, booking_id):
     # View to display the details of a single booking
@@ -180,13 +175,12 @@ def book_now(request, booking_id):
         message += "We look forward to helping you with your booking details and any special requests you may have."
 
         try:
-            print("Before sending the email")
             send_mail(subject, message, from_email, recipient_list, fail_silently=False)
-            print("After sending the email")
-            alert_message = "Booking successful. Check your email for confirmation."
+            messages.success(request, "Booking successful. Check your email for confirmation.")
         except Exception as e:
             print(f"Email sending failed: {str(e)}")
+            messages.error(request, "An error occurred while booking.")
             return HttpResponse("An error occurred while booking.")
     
-    return render(request, 'booking_detail.html', {'booking': booking, 'alert_message': alert_message})
+    return render(request, 'booking_detail.html', {'booking': booking})
     

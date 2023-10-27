@@ -236,20 +236,18 @@ rating>input:checked~label:hover~label {
     .reviews-list {
         max-height: 200px;
         overflow-y: auto;
-
-    }
-
-    .image-gallery ul {
-        max-width: 100%;
-
-        overflow-x: auto;
-
     }
 
     .scrollable-section {
         max-height: 200px;
         overflow-y: auto;
+    }
 
+    .image-gallery img {
+        max-width: 100%;
+        height: auto;
+        margin: 5px;
+        cursor: pointer;
     }
 }
 
