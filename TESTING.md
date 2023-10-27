@@ -62,6 +62,7 @@ Home     |            |                  |      |             |
 | 4           |  Click on submit review button | user will redirect to view review page | Y | Available only registerd user |
 | 5           |  In view review page if user reviews are there then there is two buttons appear:edit and delete | click on edit redirect to edit review page  | Y | Available only registerd user |
 | 6          |  Click on delete button| redirected to the review delete page | Y | Available only registerd user |
+| 7          |  Click on view more review button| redirected corresponding place view review page | Y | Available only registerd user |
 |  Footer          |   |  |  |
 | 1          |  click on facebook icon | redirect to facebook page | Y | Available for everyone |
 | 2          |  Click on instagram icon | redirect to instagram page | Y | Available for every one |

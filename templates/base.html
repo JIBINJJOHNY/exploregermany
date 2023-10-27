@@ -74,6 +74,7 @@
 <main>
     {% comment %} Messages {% endcomment %}
     {% if messages %}
+    <p>Messages are present</p>
     <div class="message-container" id="messages-notes-main">
         {% for message in messages %}
         <div class="message-container__message">
@@ -142,7 +143,7 @@
 <!-- JavaScript -->
 <script>
     setTimeout(function () {
-        let messagesDj = document.getElementById('messages-notes');
+        let messagesDj = document.getElementById('messages-notes-main');
         if (messagesDj) {
             messagesDj.style.display = 'none';
         }

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
 
-
 /*------ Global Settings------*/
 *,
 *::before,
@@ -220,6 +219,38 @@ rating>input:checked~label:hover~label {
 .reviews-list {
     list-style: none;
     padding: 0;
+}
+
+/* Default styles for larger screens */
+.description-box {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .description-box {
+        font-size: 14px;
+    }
+
+    .reviews-list {
+        max-height: 200px;
+        overflow-y: auto;
+
+    }
+
+    .image-gallery ul {
+        max-width: 100%;
+
+        overflow-x: auto;
+
+    }
+
+    .scrollable-section {
+        max-height: 200px;
+        overflow-y: auto;
+
+    }
 }
 
 /* booking form page */

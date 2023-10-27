@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import ValidationError
 from .models import State
 from .models import Package,Booking
 from django.views.generic import ListView, DetailView
@@ -11,6 +12,7 @@ from django.views.decorators.csrf import csrf_protect
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.contrib import messages
 from django.views.decorators.cache import never_cache
 import smtplib
 import ssl
@@ -43,13 +45,16 @@ def booking_create(request, package_id):
         if form.is_valid():
             # Check if the date is in the past and restrict it to the future
             booking_date = form.cleaned_data['date']
+            print(f'Current Date: {timezone.now().date()}')
             if booking_date < timezone.now().date():
                 message_alert="Booking date must be from the current date onward"
                 messages1.append(message_alert)
                 request.session['messages1']= messages1
                 print('alert')
+                print(f'Booking Date: {booking_date}')
+                print(f'Current Date: {timezone.now().date()}')
                 form.add_error('date', ValidationError('Booking date must be from the current date onward'))
-                return render(request, 'booking_form.html', {'form': form,'state': state ,'alert_message':alert_message})
+                return render(request, 'booking_form.html', {'form': form,'state': state ,'messages1':messages1})
             # Check if the number of guests exceeds the maximum
             elif form.cleaned_data['no_of_guests'] > 6:
                 form.add_error('no_of_guests', ValidationError('Maximum number of guests is 6'))
@@ -66,7 +71,6 @@ def booking_create(request, package_id):
         form = BookingForm(initial=initial_data)
 
     return render(request, 'booking_form.html', {'form': form,'state': state})
-
 @login_required
 def booking_detail(request, booking_id):
     # View to display the details of a single booking
