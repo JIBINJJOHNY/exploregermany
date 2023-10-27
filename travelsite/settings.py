@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 from pathlib import Path
-
+import django_heroku
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -173,5 +173,6 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
 EMAIL_HOST_PASSWORD = os.environ.get('APP_PASSWORD')
 EMAIL_DEBUG = True
-DISABLE_COLLECTSTATIC = True
+# DISABLE_COLLECTSTATIC = True
 
+django_heroku.settings(locals())
