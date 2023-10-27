@@ -9,18 +9,21 @@
                 <h1 class="display-4">{{ place.name }}</h1>
             </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="description-box">
-                        <p class="lead">{{ place.description }}</p>
+                <!-- Description Box -->
+                <div class="col-md-4">
+                    <div class="description-box py-2">
+                        <p class="lead" style="font-size: 14px;">{{ place.description }}</p>
+                        <!-- Reduce font size here -->
                         <iframe class="embed-responsive" src="{{ place.google_map_src }}" frameborder="0" scrolling="no"
                             marginheight="0" marginwidth="0"></iframe>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <h2 class="mb-4 review">Reviews</h2>
+                <!-- Reviews and Image Gallery -->
+                <div class="col-md-8">
+                    <h2 class="mb-4 review">Latest Reviews</h2>
                     <a href="{% url 'add_review' place.id %}" class="btn btn-primary">Add a Review</a>
                     <ul class="list-group reviews-list">
-                        {% for review in reviews %}
+                        {% for review in latest_reviews %}
                         <li class="review-item">
                             <div class="review-content">
                                 <strong>{{ review.user.first_name }}</strong> <br>
@@ -45,15 +48,18 @@
                         <li>No reviews available.</li>
                         {% endfor %}
                     </ul>
-                </div>
-
-                <div class="col-md-8">
+                    <!-- Add a link to view more reviews -->
+                    {% if total_reviews_count > 2 %}
+                    <a href="{% url 'view_review' tourist_place_id=place.id %}" class="btn btn-primary">View More
+                        Reviews ({{ total_reviews_count }})</a>
+                    {% endif %}
                     <section class="image-gallery">
                         <h2>Image Gallery</h2>
                         <ul class="list-unstyled">
                             {% for image in place.images.all %}
                             <li class="list-inline-item">
-                                <img src="{{ image.image.url }}" alt="{{ image.alt_text }}" class="thumbnail-image"
+                                <img src="{{ image.image.url }}" alt="{{ image.alt_text }}"
+                                    class="thumbnail-image img-fluid"
                                     data-image-url="{% url 'get_large_image' image.id %}">
                             </li>
                             {% endfor %}

@@ -1,46 +1,48 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<section class="background-image" style="background-image: url('{{ place.images.first.image.url }}')">
 
-<body class="textcenter" style="min-height: 80vh;">
-    <div class="content">
-        <h1>Reviews for {{ tourist_place.name }}</h1>
-        <ul class="reviews-list">
-            {% for review in reviews %}
-            <li class="review-item">
-                <h3>{{ review.user.first_name }}</h3>
-                <p class="created-at">
-                    <time datetime="{{ review.created_at|date:'Y-m-d' }}">
-                        Created on {{ review.created_at|date:'F j, Y' }}
-                    </time>
-                </p>
-                <div class="rating">
-                    <div class="rating-stars">
-                        {% spaceless %}
-                        {% for star in "12345"|make_list %}
-                        {% if forloop.counter <= review.rating|add:"0" %}
-                        <i class="fas fa-star rated"></i>
-                        {% else %}
-                        <i class="far fa-star"></i>
-                        {% endif %}
-                        {% endfor %}
-                        {% endspaceless %}
+    <body class="textcenter" style="min-height: 100vh;">
+        <div class="content">
+            <h1 class="view_review">Reviews for {{ tourist_place.name }}</h1>
+            <ul class="reviews-list">
+                {% for review in reviews %}
+                <li class="review-item">
+                    <h3>{{ review.user.first_name }}</h3>
+                    <p class="created-at">
+                        <time datetime="{{ review.created_at|date:'Y-m-d' }}">
+                            Created on {{ review.created_at|date:'F j, Y' }}
+                        </time>
+                    </p>
+                    <div class="rating">
+                        <div class="rating-stars">
+                            {% spaceless %}
+                            {% for star in "12345"|make_list %}
+                            {% if forloop.counter <= review.rating|add:"0" %}
+                            <i class="fas fa-star rated"></i>
+                            {% else %}
+                            <i class="far fa-star"></i>
+                            {% endif %}
+                            {% endfor %}
+                            {% endspaceless %}
+                        </div>
                     </div>
-                </div>
-                <p>{{ review.comment }}</p>
+                    <p>{{ review.comment }}</p>
 
-                {% if current_user == review.user %}
-                <div class="review-actions">
-                    <a href="{% url 'edit_review' review.id %}" class="btn btn-success">Edit</a>
-                    <a href="{% url 'delete_review' tourist_place_id=tourist_place.id review_id=review.id %}"
-                        class="btn btn-danger">Delete</a>
-                </div>
-                {% endif %}
-            </li>
-            {% empty %}
-            <li>No reviews available.</li>
-            {% endfor %}
-        </ul>
-    </div>
-</body>
+                    {% if current_user == review.user %}
+                    <div class="review-actions">
+                        <a href="{% url 'edit_review' review.id %}" class="btn btn-success">Edit</a>
+                        <a href="{% url 'delete_review' tourist_place_id=tourist_place.id review_id=review.id %}"
+                            class="btn btn-danger">Delete</a>
+                    </div>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <li>No reviews available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </body>
+</section>
 {% endblock %}

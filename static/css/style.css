@@ -217,6 +217,11 @@ rating>input:checked~label:hover~label {
     resize: none;
 }
 
+/*view_review page */
+.view_review {
+    color: white;
+}
+
 /* booking create page*/
 .booking-form-container {
     background-color: rgba(255, 255, 255, 0.7);

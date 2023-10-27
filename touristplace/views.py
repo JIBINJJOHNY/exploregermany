@@ -8,7 +8,7 @@ from .forms import ReviewForm
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.views.decorators.cache import never_cache
-
+from django.db.models import F
 def account_settings(request):
    
     user = request.user
@@ -44,15 +44,18 @@ def state_detail(request, state_id):
 @login_required
 def place_details(request, place_id):
     place = get_object_or_404(TouristPlace, pk=place_id)
-    tourist_place = TouristPlace.objects.get(pk=place_id)
-    default_image = TouristPlaceImage.objects.filter(touristplace=place, default_image=True).first()
-    place_image_url = default_image.image_url if default_image else None
 
-    # Retrieve reviews associated with the tourist place
-    reviews = Review.objects.filter(tourist_place=place)
+    # Retrieve the two latest reviews and pass them to the template
+    latest_reviews = Review.objects.filter(tourist_place=place).order_by('-created_at')[:2]
 
-    return render(request, 'place_detail.html', {'place': place, 'place_image_url': place_image_url, 'reviews': reviews})
+    # Retrieve the total number of reviews for the place
+    total_reviews_count = Review.objects.filter(tourist_place=place).count()
 
+    return render(request, 'place_detail.html', {
+        'place': place,
+        'latest_reviews': latest_reviews,
+        'total_reviews_count': total_reviews_count,
+    })
 def get_large_image(request, image_id):
     try:
         image = TouristPlaceImage.objects.get(id=image_id)
@@ -111,10 +114,11 @@ def view_reviews(request, tourist_place_id):
         'tourist_place': tourist_place,
         'reviews': reviews,
         'current_user': request.user,
+        'place': tourist_place,
     }
 
     return render(request, 'view_review.html', context)
-from django.urls import reverse
+
 
 @login_required
 @never_cache
