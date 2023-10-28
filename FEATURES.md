@@ -38,15 +38,19 @@ navbar contain following links.
     + logout
 
 - account setting page  contains three buttons:
-    +
 ![account setting page](documentation/accountsetting.png)
+    + Reset email (redirect to django email reset page )
+    + Reset password(redirect to django password reset page)
+    + Delete account(redirect to account delete page )
+        * in this page delte account confirmation button if click delete account button account will delete permanently
+![Delete account page](documentation/deleteaccount.png)
 
+![home page](documentation/home.png)
 - if user click logo it shows home page.
 - home page contains:
-    + about section
-    + destination section
-    + package section
-    + contact us section
-![home page](documentation/home.png)
+    + about section(Contains brief explanation of website )
+    + destination section (includes a list of federal states explore germany offers tours )
+    + package section(contains list of federal states explore germany offers tours packages)
+    + contact us section(provides company location map address phone and email)
 
-- 
+

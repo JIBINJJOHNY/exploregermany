@@ -55,14 +55,15 @@ body {
 
 /*Account page */
 .accout_page {
-    background-color: rgba(163, 155, 155, 0.5);
+    background-color: rgba(248, 240, 240, 0.5);
     padding: 20px;
     min-height: 80vh;
 }
 
+/* Booking list page */
 .booking-list {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(217, 194, 194, 0.902);
     padding: 20px;
     min-height: 80vh;
 }
