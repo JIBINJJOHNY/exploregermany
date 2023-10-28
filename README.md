@@ -124,7 +124,25 @@ The Explore Deutschland travel website embodies a modern and user-centric design
 Please refer to the [TESTING.md](TESTING.md) file for all test-related documentation.
 
 ---
+### Wireframes
 
+- [Login and signup page](documentation/wireframes/loginsignup.png)
+- [account settings page](documentation/wireframes/accountsetting.png)
+- [homepage](documentation/wireframes/homepage.png)
+- [state detail page](documentation/wireframes/statedetail.png)
+- [place detail page](documentation/wireframes/placedetail.png)
+- [add review page ](documentation/wireframes/add_review.png)
+- [edit review page ](documentation/wireframes/edit_review.png)
+- [view review page ](documentation/wireframes/viewreview.png)
+- [bookingdetail page](documentation/wireframes/bokkingdetail.png)
+
+--
+### Entity-Relationship Diagram
+
+* The ERD was created using [lucid.app](https://www.lucidchart.com/).
+
+- ![Database Scheme](documentation/erd.png)
+---------
 ## Information Architecture
 
 ### Database

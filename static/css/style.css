@@ -35,28 +35,6 @@ body {
     text-decoration: none;
 }
 
-.about-container {
-    display: flex;
-    flex-direction: row-reverse;
-    text-align: justify;
-    padding: 20px;
-    margin-left: 300px;
-}
-
-.about-content {
-    flex: 1;
-    padding-left: 30px;
-}
-
-.flag-image {
-    max-width: 200px;
-    height: auto;
-}
-
-.small-flag {
-    max-width: 100%;
-    height: auto;
-}
 
 .our-packages {
     margin-bottom: 50px;
@@ -290,6 +268,10 @@ center-form {
 
 booking-list-content {
     min-height: 100vh;
+}
+
+#contact {
+    margin-bottom: 30px;
 }
 
 /* Footer styles */

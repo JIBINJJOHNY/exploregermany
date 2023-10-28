@@ -2,16 +2,19 @@
 {% load static %}
 {% block content %}
 
-
-<div class="centered-box">
-    <div class="transparent-bg">
-        <h1>Confirm Deletion</h1>
-        <p>Are you sure you want to delete the booking for {{ booking.user }} on {{ booking.date }}?</p>
-        <form method="post">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger">Confirm Delete</button>
-            <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
-        </form>
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+    <div class="card transparent-bg">
+        <div class="card-body">
+            <h1 class="card-title">Confirm Deletion</h1>
+            <p class="card-text">Are you sure you want to delete the booking for {{ booking.user }} on
+                {{ booking.date }}?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirm Delete</button>
+                <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
     </div>
 </div>
+
 {% endblock %}

@@ -1,26 +1,42 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="booking-list">
-    <!-- Add a CSS class to the content area -->
-    <h1>Booking List</h1>
-    <ul>
-        {% for booking in bookings %}
-        <li>
-            <a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a>
-            <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Edit</a>
-            <a href="{% url 'confirm_delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
-        </li>
-        {% empty %}
-        <li>No bookings available</li>
-        {% endfor %}
-    </ul>
-    {% if not bookings %}
-    <a href="{% url 'package_list' %}" class="btn btn-primary">Create a Booking</a>
-    {% endif %}
+<div class="container">
+    <div class="booking-list">
+        <h1 class="text-center">Booking List</h1>
+        <ul class="list-group">
+            {% for booking in bookings %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <a href="{% url 'booking_detail' booking.id %}">{{ booking.user }} on {{ booking.date }}</a>
+                <div class="btn-group" role="group">
+                    <a href="{% url 'update_booking' booking.id %}" class="btn btn-primary">Edit</a>
+                    <a href="{% url 'confirm_delete_booking' booking.id %}" class="btn btn-danger">Delete</a>
+                </div>
+            </li>
+            {% empty %}
+            <li class="list-group-item">No bookings available</li>
+            {% endfor %}
+        </ul>
+        {% if not bookings %}
+        <div class="text-center">
+            <a href="{% url 'package_list' %}" class="btn btn-primary">Create a Booking</a>
+        </div>
+        {% endif %}
+    </div>
 </div>
-</body>
-
 <script src="{% static 'js/delete_booking.js' %}"></script>
+<style>
+    /* Set a minimum height of 100vh */
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 
+    .booking-list {
+        flex: 1;
+        /* Grow to fill available space */
+    }
+</style>
 {% endblock %}
