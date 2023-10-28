@@ -114,9 +114,26 @@ As a Travel Enthusiast and Regular Explorer, I want a feature-rich experience on
     + [JShint](https://jshint.com/): was used to validate JS code for the website.
     + [PEP8](https://pep8.org/): was used to validate Python code for the website.
 
+---
+
+## FEATURES
+
+Please refer to the [FEATURES.md](FEATURES.md) file for all features-related documentation.
+
+
+
+---
 ## Design
 The Explore Deutschland travel website embodies a modern and user-centric design philosophy. With simplicity at its core, the website's minimalistic aesthetics and strategic use of white space create an uncluttered and visually engaging platform. Responsive design ensures a consistent experience across devices. Our purpose is to inspire and assist travelers in exploring Germany, making their journeys meaningful and memorable.
 
+### Color Scheme
+
+The color scheme used on our website predominantly revolves around a clean and minimalist aesthetic with a focus on the color white. White, often associated with purity and simplicity, plays a central role in our design, providing a sense of clarity and openness. This color choice is complemented by subtle accents and harmonious shades, creating a visually pleasing and user-friendly interface. The use of white in our color scheme not only enhances readability but also conveys a sense of professionalism and modernity, ensuring that our website delivers an inviting and elegant user experience.
+
+
+### Lettering
+
+Lato is the primary font used in the program. This font is used in a way that complements the color scheme. It goes without saying that the Lato typeface was selected since it is easier to read, which improves user experience.
 
 ---
 ## Testing

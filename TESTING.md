@@ -75,3 +75,52 @@ Home     |            |                  |      |             |
 | 4          |  Click on destination link | redirect to home page destination section| Y | Available for everyone |
  5           | Click on Package link | redirect to home page page destination section| Y | Available for everyone |
  6           | Click on Contact link | redirect to home page contact section| Y | Available for everyone |
+
+
+ ## Validation:
+### HTML Validation:
+
+
+### CSS Validation:
+
+- ![Full CSS Validation Report](documentation/css.png)
+
+- The official [W3C (Jigsaw)](https://jigsaw.w3.org/css-validator/#validate_by_uri) validator yielded no errors or warnings, with the exception of a note on the usage of webkits for the box-shadow and css root variables. But CSS code functions flawlessly across a range of platforms.
+
+### JavaScript Code Quality
+ JavaScript code is analyzed using JSHint to ensure code quality and compatibility. Here are some key points to keep in mind:
+
+ES6 Compatibility: Some parts of our code use features that are only available in ECMAScript 6 (ES6). If you encounter warnings related to "arrow function syntax," "const," or "template literal syntax," it's important to use an ES6-compliant environment or update your code to ES6 standards.
+
+Function Complexity: We aim to maintain code that is clean and readable. Please consider refactoring functions with a high cyclomatic complexity to make the code more understandable and maintainable.
+
+To resolve these issues, you can update your development environment to support ES6 features or adjust your code according to the ES5 standard, and refactor complex functions when necessary.
+
+If you have any questions or need assistance with code improvements, feel free to reach out to our development team.
+
+- ![full js code Report](documentation/jshint.png)
+
+
+
+## Compatibility
+
+Testing was conducted on the following browsers;
+
+- Firefox;
+- Chrome;
+- Safari;
+
+![Firefox](documentation/firefox1.png)
+![Firefox](documentation/firefox2.png)
+![Firefox](documentation/firefox3.png)
+![chrome](documentation/chrome1.png)
+![chrome](documentation/chrom2.png)
+![chrome](documentation/chrome3.png)
+![chrome](documentation/chrome4.png)
+![safari](documentation/safari1.png)
+![safari](documentation/safari2.png)
+![safari](documentation/safari3.png)
+# Responsiveness
+
+The responsiveness was checked manually by using devtools (Chrome) throughout the whole development. It was also checked with [Responsive Viewer](https://chrome.google.com/webstore/detail/responsive-viewer/inmopeiepgfljkpkidclfgbgbmfcennb/related?hl=en) Chrome extension.
+
