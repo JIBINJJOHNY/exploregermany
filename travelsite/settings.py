@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_heroku',
     'cloudinary',
+    'django_extensions',
     'touristplace',
     'package',
 
@@ -175,5 +176,9 @@ EMAIL_HOST_USER = os.environ.get('EMAIL_ID')
 EMAIL_HOST_PASSWORD = os.environ.get('APP_PASSWORD')
 EMAIL_DEBUG = True
 # DISABLE_COLLECTSTATIC = True
+GRAPH_MODELS = {
+  'all_applications': True,
+  'group_models': True,
+}
 
 django_heroku.settings(locals())

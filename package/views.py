@@ -32,31 +32,32 @@ class PackageDetailView(DetailView):
         context['packages'] = Package.objects.filter(state_id=state_id)
         return context
 
-from django.core.exceptions import ValidationError
-
-from django.contrib import messages
-
 @login_required
 def booking_create(request, package_id):
     package = get_object_or_404(Package, pk=package_id)
     state = package.state
 
     if request.method == 'POST':
+        messages1 = []
         form = BookingForm(request.POST)
+        print("HUY")
 
         if form.is_valid():
+            # Check if the date is in the past and restrict it to the future
             booking_date = form.cleaned_data['date']
+            print(f'Current Date: {timezone.now().date()}')
 
             new_booking = form.save(commit=False)
             new_booking.user = request.user
             new_booking.save()
             return redirect('booking_detail', booking_id=new_booking.id)
         else:
-            # Store form errors in messages framework
-            for field, error_list in form.errors.items():
-                for error in error_list:
-                    messages.error(request, f'Error in {field}: {error}')
-
+            # check the error
+            print(form.errors)
+            # message_alert
+            messages1.append(form.errors)
+            request.session['messages']= messages1
+            return render(request, 'booking_form.html', {'form': form,'state': state ,'messages':messages1})
     else:
         initial_data = {
             'user_full_name': request.user.get_full_name(),
@@ -64,8 +65,7 @@ def booking_create(request, package_id):
         }
         form = BookingForm(initial=initial_data)
 
-    return render(request, 'booking_form.html', {'form': form, 'state': state})
-
+    return render(request, 'booking_form.html', {'form': form,'state': state})
 @login_required
 def booking_detail(request, booking_id):
     # View to display the details of a single booking

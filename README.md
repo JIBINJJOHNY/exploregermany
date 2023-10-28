@@ -286,7 +286,12 @@ For any documentation pertaining to deployment, please refer to the [DEPLOYMENT.
 [Römerberg](https://www.globalarbitrationnews.com/2022/03/03/german-supreme-court-confirms-that-achmea-decision-is-transferable-to-arbitration-clauses-in-other-bits/)
 [Rüdesheim am Rhein](https://www.tripadvisor.com/HotelsList-Frankfurt-Quiet-Hotels-zfp848631.html)
 [Wiesbaden](https://www.germany.travel/en/cities-culture/spa-towns.html)
-
+[Phantasialand](http://ling-bao-bruehl.nrwestphaliahotels.com/en/)
+[Horn bad meinberg](https://www.hornbadmeinberg.de/)
+[Aachen Cathedral](https://t24hs.com/relive-history-with-these-things-to-do-in-aachen-german/)
+[Dusseldorf](https://victoriasymphony.ca/support/the-majestic-rhine-cruise-beethoven-the-german-romantics/)
+[Lindt Chocolate Museum](https://www.cologne-tourism.com/arts-culture/sights/detail/chocolate-museum)
+[Cologne Cathedral](https://gsgii.org/nabs/germany/)
 
 
 
@@ -299,7 +304,6 @@ For any documentation pertaining to deployment, please refer to the [DEPLOYMENT.
 
 
 ## Acknowledgments
-
 
 - [Iuliia Konovalova](https://github.com/IuliiaKonovalova) my mentor has been a great supporter, guiding me through the development of the project and helping me to learn a lot of new things by challenging me to do something new.
 - [Code Institute](https://codeinstitute.net/de/)  tutors and Slack community members for their support and help.
