@@ -36,13 +36,29 @@
         </form>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="{% static 'js/star_rating.js' %}"></script>
     <script>
         // Set the initial rating based on the review.rating value
         const initialRating = parseInt('{{ review.rating }}');
         if (initialRating > 0 && initialRating <= 5) {
-            $(`#star-rating i[data-rating="${initialRating}"]`).addClass('rated');
+            for (let i = 1; i <= initialRating; i++) {
+                $(`#star-rating i[data-rating="${i}"]`).addClass('rated');
+            }
         }
+
+        // Add a click event handler to the stars
+        $('#star-rating i').on('click', function () {
+            const rating = $(this).data('rating');
+            $('#rating').val(rating);
+
+            // Reset all stars to their default state
+            $('#star-rating i').removeClass('rated');
+
+            // Set the selected stars to gold
+            for (let i = 1; i <= rating; i++) {
+                $(`#star-rating i[data-rating="${i}"]`).addClass('rated');
+            }
+        });
     </script>
+
 </section>
 {% endblock %}

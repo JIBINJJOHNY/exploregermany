@@ -66,12 +66,19 @@ def booking_create(request, package_id):
         form = BookingForm(initial=initial_data)
 
     return render(request, 'booking_form.html', {'form': form,'state': state})
+
 @login_required
 def booking_detail(request, booking_id):
     # View to display the details of a single booking
     booking = get_object_or_404(Booking, pk=booking_id)
-    state = booking.package.state 
-    return render(request, 'booking_detail.html', {'booking': booking,'state': state})
+
+    # Check if the booking belongs to the currently logged-in user
+    if booking.user == request.user:
+        state = booking.package.state 
+        return render(request, 'booking_detail.html', {'booking': booking, 'state': state})
+    else:
+        return HttpResponseForbidden("You do not have permission to view this booking.")
+
 
 @login_required
 def booking_list(request):

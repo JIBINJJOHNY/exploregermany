@@ -1,9 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap');
-
-/*------ Global Settings------*/
-*,
-*::before,
-*::after {
+/* Global styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -39,6 +35,19 @@ body {
     text-decoration: none;
 }
 
+.about-container {
+    display: flex;
+    flex-direction: row-reverse;
+    text-align: justify;
+    padding: 20px;
+    margin-left: 300px;
+}
+
+.about-content {
+    flex: 1;
+    padding-left: 30px;
+}
+
 .flag-image {
     max-width: 200px;
     height: auto;
@@ -51,91 +60,6 @@ body {
 
 .our-packages {
     margin-bottom: 50px;
-}
-
-/*Account page */
-.accout_page {
-    background-color: rgba(248, 240, 240, 0.5);
-    padding: 20px;
-    min-height: 80vh;
-}
-
-/* Booking list page */
-.booking-list {
-    text-align: center;
-    background-color: rgba(217, 194, 194, 0.902);
-    padding: 20px;
-    min-height: 80vh;
-}
-
-ul {
-    list-style: none;
-}
-
-#contact {
-    margin-bottom: 30px;
-}
-
-/* update booking page */
-/* Style for the container */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Style for the form box */
-.form-box {
-    background: rgba(143, 139, 139, 0.8);
-    /* Transparent white background */
-    border: 1px solid #ccc;
-    padding: 20px;
-    max-width: 800px;
-}
-
-/* Center the form content */
-.form-content {
-    text-align: center;
-}
-
-/* Style for labels and inputs */
-.form-group {
-    margin-bottom: 10px;
-}
-
-/* Style for labels */
-.form-label {
-    display: inline-block;
-    width: 40%;
-    /* Adjust the width to control the gap between labels and inputs */
-    text-align: right;
-}
-
-/* Style for inputs */
-.form-input {
-    display: inline-block;
-    width: 60%;
-    /* Adjust the width to control the gap between labels and inputs */
-}
-
-/* delete booking page*/
-/* Center the content vertically and horizontally */
-.centered-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Add a transparent background color */
-.transparent-bg {
-    background-color: rgba(225, 172, 172, 0.8);
-    /* Adjust the alpha value for transparency */
-    padding: 20px;
-    border: 1px solid #720505;
-    border-radius: 5px;
 }
 
 /* State detail page styles */
@@ -284,34 +208,16 @@ rating>input:checked~label:hover~label {
     padding: 0;
 }
 
-/* Default styles for larger screens */
-.description-box {
-    font-size: 16px;
-    line-height: 1.5;
+/* add review page*/
+
+.star-rating i.checked {
+    color: gold;
+    /* Change the color to gold for checked stars */
 }
 
-/* Media query for smaller screens */
-@media (max-width: 767px) {
-    .description-box {
-        font-size: 14px;
-    }
-
-    .reviews-list {
-        max-height: 200px;
-        overflow-y: auto;
-    }
-
-    .scrollable-section {
-        max-height: 200px;
-        overflow-y: auto;
-    }
-
-    .image-gallery img {
-        max-width: 100%;
-        height: auto;
-        margin: 5px;
-        cursor: pointer;
-    }
+/* view review */
+.rated {
+    color: gold;
 }
 
 /* booking form page */
@@ -321,29 +227,6 @@ rating>input:checked~label:hover~label {
 
 .no-resize {
     resize: none;
-}
-
-/*view_review page */
-.view_review {
-    color: white;
-}
-
-.rated {
-    color: gold;
-}
-
-.edit_review {
-    color: white;
-}
-
-/* Add review page */
-.add_review {
-    color: white;
-}
-
-.star-rating i.checked {
-    color: gold;
-    /* Change the color to gold for checked stars */
 }
 
 /* booking create page*/
