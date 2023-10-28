@@ -1,10 +1,17 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
-<h1>Confirm Deletion</h1>
-<p>Are you sure you want to delete the booking for {{ booking.user }} on {{ booking.date }}?</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Confirm Delete</button>
-    <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
-</form>
+
+
+<div class="centered-box">
+    <div class="transparent-bg">
+        <h1>Confirm Deletion</h1>
+        <p>Are you sure you want to delete the booking for {{ booking.user }} on {{ booking.date }}?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <a href="{% url 'booking_list' %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
 {% endblock %}

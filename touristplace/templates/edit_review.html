@@ -37,5 +37,12 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{% static 'js/star_rating.js' %}"></script>
+    <script>
+        // Set the initial rating based on the review.rating value
+        const initialRating = parseInt('{{ review.rating }}');
+        if (initialRating > 0 && initialRating <= 5) {
+            $(`#star-rating i[data-rating="${initialRating}"]`).addClass('rated');
+        }
+    </script>
 </section>
 {% endblock %}

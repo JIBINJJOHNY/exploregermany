@@ -295,6 +295,29 @@ For any documentation pertaining to deployment, please refer to the [DEPLOYMENT.
 
 
 
+[Blautopf](https://reisebloegle.de/blautopf/)
+[Heidelberg Castle](https://planetofhotels.com/guide/en/germany/heidelberg)
+[Mainau Island](https://www.mainau.de/en/home)
+[Outletcity Metzingen](https://www.tripadvisor.com/Attraction_Review-g562796-d2283313-Reviews-Outletcity_Metzingen-Metzingen_Baden_Wurttemberg.html)
+[Mercedes Benz Museum](https://julianherzog.com/albums/architecture/content/mercedes-benz-museum-stuttgart/)
+[Europa Park](https://www.esslinger-zeitung.de/inhalt.europa-park-in-rust-so-nutzt-der-freizeitpark-die-zeit-ohne-besucher.a99612a0-fd15-4282-)
+[Oberstdorf](https://nextvame.com/ski-jumping-additional-continental-cup-in-oberstdorf/)
+[Linderhof Palace](https://en.idei.club/48946-linderhof-palace.html)
+[Füssen](https://www.linkedin.com/in/hazel-smith-0016ab9/?originalSubdomain=uk)
+[Garmisch Partenkirchen](https://www.makemytrip.com/hotels-international/en-sg/germany/garmisch_partenkirchen-hotels/werdenfelserei-details.html)
+[Berchtesgarden](https://eu-message.usatoday.com/)
+[Munich](https://wwiifoundation.org/wp-content/uploads/2023/10/The-World-War-II-Foundation-2024.pdf)
+[St.Petri Dom](https://slivenmedia.com/news/minuti-za-pateshestvie-bremen-po-patya-na-muzikantite)
+[Bremen town Hall](https://www.locationscout.net/locations/2301-bremen)
+[Rhododendron Park](https://www.wfb-bremen.de/de/page/stories/standortmarketing/lebensqualitaet/warum-ein-besuch-im-rhododendron-park-bremen-ganzjaehrig-lohnt)
+[Schlachte](https://zhuanlan.zhihu.com/p/141603098)
+[Schnoor](https://www.wfb-bremen.de/en/page/bremen-invest/schnoor-in-bremen)
+[Universum Bremen](https://www.google.com/search?q=universum+bremen&sca_esv=577336729&rlz=1C5CHFA_enDE951DE951&tbm=isch&source=lnms&sa=X&ved=2ahUKEwjuzI6ZxJeCAxVv1QIHHdoKDOwQ_AUoAnoECAQQBA&biw=1440&bih=813&dpr=2#imgrc=tDoyLnkHP67BvM&imgdii=nGXEjF_aL-8p3M)
+
+
+
+
+
 
 
 
