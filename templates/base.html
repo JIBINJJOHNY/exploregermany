@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="EXPLORE DEUTSCHLAND - YOUR ULTIMATE GUIDE TO GERMANY">
     <meta name="keywords" content="GERMANY, TRAVEL, DESTINATIONS, TOURISAM,DEUTSCHLAND">
-
     {% comment %} Favicon {% endcomment %}
     <link rel="icon" type="image/png" href="{% static 'images/favicon.png' %}">
     <!-- Bootstrap CSS -->
@@ -20,7 +19,6 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <title>Explore Deutschland</title>
 </head>
-
 <header>
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href="{% url 'home' %}">
@@ -70,7 +68,6 @@
             </ul>
     </nav>
 </header>
-
 <main>
     {% comment %} Messages {% endcomment %}
     {% if messages %}
@@ -86,7 +83,6 @@
     {% block content %}
     {% endblock %}
 </main>
-
 <footer class="footer">
     <div class="footer-left col-md-4 col-sm-6">
         <p class="about">

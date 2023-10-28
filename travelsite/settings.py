@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_heroku',
     'cloudinary',
-    'django_extensions',
     'touristplace',
     'package',
 
